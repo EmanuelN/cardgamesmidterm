@@ -1,15 +1,33 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>
   Login Page
   </title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+   <!-- App CSS -->
+  <link rel="stylesheet" type="text/css" href="styles/app.css" />
+
 </head>
 <body>
-<h2>Please log in</h2>
-  <form method="POST" action="/login">
-      Email: <input type="email" name="email">
-      Password: <input type="password" name="password">
-      <button name="login">Login</button>
-  </form>
+  <div class="jumbotron">
+    <h2 id="login">Please log in</h2>
+      <form method="POST" action="/login">
+          Email: <input type="email" name="email">
+          Password: <input type="password" name="password">
+          <button type="login" class="btn btn-login btn-lg">Login</button>
+      </form>
+  </div>
+
+  <!-- Including Bootstrap's Files via CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 </html>
