@@ -8,15 +8,21 @@ app.use(cookieParser({
   keys: ['gdionasgionads', 'gnuiadngiudndn'],
 }));
 
+
 const path = require('path');
 app.use(express.static(path.join(__dirname, 'public')));
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.set('view engine', 'ejs');
+
 app.get("/", (req,res) =>{
   if (req.session.user_id){
-    res.redirect('home.html');
+    let name = req.session.user_id
+    res.render('home',
+      {name: name
+    });
   } else{
     res.redirect('login.html');
   }
@@ -26,7 +32,7 @@ app.get('/login', (req, res) =>{
   if (!req.session.user_id){
     res.redirect('login.html');
   } else {
-    res.redirect('home.html');
+    res.redirect('/');
   }
 })
 
@@ -37,7 +43,7 @@ app.post('/logout', (req, res) =>{
 
 app.post('/login', (req, res) =>{
   req.session.user_id = req.body.email;
-  res.redirect('home.html');
+  res.redirect('/');
 });
 
 app.listen(8080, ()=>{
