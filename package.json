@@ -1,0 +1,25 @@
+{
+  "name": "cardgamesmidterm",
+  "version": "1.0.0",
+  "description": "Card Game Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmanuelN/cardgamesmidterm.git"
+  },
+  "keywords": [
+    "card",
+    "game",
+    "midterm",
+    "project"
+  ],
+  "author": "Emanuel, Bhav and Avi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmanuelN/cardgamesmidterm/issues"
+  },
+  "homepage": "https://github.com/EmanuelN/cardgamesmidterm#readme"
+}
