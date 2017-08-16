@@ -1,3 +1,3 @@
-const $ = require('jQuery');
-
-$('p #username').text = ""
+$( () =>{
+ $('#username').text('session.user_id');
+});

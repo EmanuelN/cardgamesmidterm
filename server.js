@@ -8,7 +8,6 @@ app.use(cookieParser({
   keys: ['gdionasgionads', 'gnuiadngiudndn'],
 }));
 
-
 const path = require('path');
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -32,7 +31,7 @@ app.get('/login', (req, res) =>{
 })
 
 app.post('/logout', (req, res) =>{
-  req.session.user_id = '';
+  req.session.user_id = null;
   res.redirect('login.html');
 })
 
