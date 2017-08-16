@@ -1,1 +1,1 @@
-# cardgamesmidterm
+# Card Games Midterm project
