@@ -17,6 +17,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.set('view engine', 'ejs');
 
+
+//ROUTES
 app.get("/", (req,res) =>{
   if (req.session.user_id){
     let name = req.session.user_id
