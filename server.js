@@ -1,10 +1,13 @@
 const express = require('express');
 const app = express();
 
-app.set('view engine', 'ejs');
+// const cookieParser = require('cookie-session');
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.get('/', (req, res) =>{
-  res.render('home')
+  res.redirect('index.html')
 });
 
 app.listen(8080, ()=>{
