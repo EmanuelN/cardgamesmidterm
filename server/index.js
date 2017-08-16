@@ -26,13 +26,13 @@ app.get("/", (req,res) =>{
       {name: name
     });
   } else{
-    res.redirect('login.html');
+    res.render('login');
   }
 });
 
 app.get('/login', (req, res) =>{
   if (!req.session.user_id){
-    res.redirect('login.html');
+    res.render('login');
   } else {
     res.redirect('/');
   }
@@ -40,7 +40,7 @@ app.get('/login', (req, res) =>{
 
 app.post('/logout', (req, res) =>{
   req.session.user_id = null;
-  res.redirect('login.html');
+  res.render('login');
 })
 
 app.post('/login', (req, res) =>{

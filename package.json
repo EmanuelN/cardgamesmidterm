@@ -2,7 +2,7 @@
   "name": "cardgamesmidterm",
   "version": "1.0.0",
   "description": "Card Game Project",
-  "main": "server.js",
+  "main": "server/index.js",
    "scripts": {
     "start": "./node_modules/.bin/nodemon server/index.js --ignore node_modules/"
   },
