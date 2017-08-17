@@ -74,7 +74,7 @@ app.get('/goofspeil', (req, res) =>{
   knexhelper.name(function(err, name){
       myName = name;
   if (!req.session.user_id){
-    res.render('login');
+    res.redirect('/');
   } else {
     res.render('goofspeil',
       {name: myName.name
