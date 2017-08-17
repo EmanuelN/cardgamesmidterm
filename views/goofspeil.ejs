@@ -13,29 +13,57 @@
    <!-- App CSS -->
   <link rel="stylesheet" href="/styles/app.css" type="text/css"/>
 
-
 </head>
 
-  <body>
+<body class="bump-down">
+
   <div class= "nav-bar">
+  <% include ./partials/_nav_game %>
   </div>
 
-  <div class = "opponent">
+     <div class='container'>
+      <div class='row play-area'>
 
+        <div class = "opponent row-sm-3">
+          <img class="card-deck" id="card-1-opponent" src="/images/card_logo.png">
+          <img class="card-deck" id="card-2-opponent" src="/images/card_logo.png">
+          <img class="card-deck" id="card-3-opponent" src="/images/card_logo.png">
+          <img class="card-deck" id="card-4-opponent" src="/images/card_logo.png">
+          <img class="card-deck" id="card-5-opponent" src="/images/card_logo.png">
+          <img class="card-deck" id="card-6-opponent" src="/images/card_logo.png">
+          <img class="card-deck" id="card-7-opponent" src="/images/card_logo.png">
+          <img class="card-deck" id="card-8-opponent" src="/images/card_logo.png">
+          <img class="card-deck" id="card-9-opponent" src="/images/card_logo.png">
+          <img class="card-deck" id="card-10-opponent" src="/images/card_logo.png">
+          <img class="card-deck" id="card-11-opponent" src="/images/card_logo.png">
+          <img class="card-deck" id="card-12-opponent" src="/images/card_logo.png">
+          <img class="card-deck" id="card-13-opponent" src="/images/card_logo.png">
+          <div class="navbar-form navbar-right">Player 1  Score:<%= name %></div>
+        </div>
 
+        <div class= "prize row-sm-2">
+          <img class="card-deck" id="card-deck-table" src="/images/card_logo.png">
+          <img class="card-deck" id="card-played-table" src="/images/card_logo.png">
+        </div>
 
+        <div class= "player_deck row-sm-3">
+          <img class="card-deck" id="card-13-player" src="/images/card_logo.png">
+          <img class="card-deck" id="card-13-player" src="/images/card_logo.png">
+          <img class="card-deck" id="card-13-player" src="/images/card_logo.png">
+          <img class="card-deck" id="card-13-player" src="/images/card_logo.png">
+          <img class="card-deck" id="card-13-player" src="/images/card_logo.png">
+          <img class="card-deck" id="card-13-player" src="/images/card_logo.png">
+          <img class="card-deck" id="card-13-player" src="/images/card_logo.png">
+          <img class="card-deck" id="card-13-player" src="/images/card_logo.png">
+          <img class="card-deck" id="card-13-player" src="/images/card_logo.png">
+          <img class="card-deck" id="card-13-player" src="/images/card_logo.png">
+          <img class="card-deck" id="card-13-player" src="/images/card_logo.png">
+          <img class="card-deck" id="card-13-player" src="/images/card_logo.png">
+          <img class="card-deck" id="card-13-player" src="/images/card_logo.png">
+          <div class="navbar-form navbar-right">Player 2 Score:<%= name %></div>
+        </div>
 
-  </div>
-
-  <div class= "prize">
-
-  </div>
-
-  <div class= "player_deck">
-
-  </div>
-
+      </div>
+    </div>
   </body>
-
-
 </html>
