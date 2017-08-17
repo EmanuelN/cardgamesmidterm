@@ -25,4 +25,11 @@
   width: 10em;
 }
 
+.logo{
+    height: 10em;
+    width: 15em;
+    float: left;
+    position: relative;
+}
+
 
