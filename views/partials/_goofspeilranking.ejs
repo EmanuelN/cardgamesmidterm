@@ -1,0 +1,9 @@
+    <p>Goofspeil rankings:
+    <% for (key in rankingGoofspeil) { %>
+    <p>
+    Rank: <%= Number(key) + 1%>
+    Name: <%= rankingGoofspeil[key].player %>
+    Wins: <%= rankingGoofspeil[key].wins %>
+    </p>
+    <% } %>
+    </p>
