@@ -42,11 +42,52 @@ knex.select('name').from('users').where({id: 1})
     return knex.destroy();
 });
 
+let rankingBlackjack = {};
+knex.select('name as player').count('winner_id as wins')
+.from('users')
+.innerJoin('blackjacks', 'users.id', 'winner_id')
+.groupBy('name').orderBy('wins', 'desc')
+.asCallback ((err, rows) => {
+  if (err){
+    console.error(err);
+  } else {
+    for (let row in rows){
+      rankingBlackjack[row] = {
+        player: rows[row].player,
+        wins: rows[row].wins
+      };
+    }
+  }
+  return knex.destroy();
+});
+
+let rankingGoofspeil = {};
+knex.select('name as player').count('winner_id as wins')
+.from('users')
+.innerJoin('goofspeils', 'users.id', 'winner_id')
+.groupBy('name').orderBy('wins', 'desc')
+.asCallback ((err, rows) => {
+  if (err){
+    console.error(err);
+  } else {
+    for (let row in rows){
+      rankingGoofspeil[row] = {
+        player: rows[row].player,
+        wins: rows[row].wins
+      };
+    }
+  }
+  return knex.destroy();
+});
+
+
 //ROUTES
 app.get("/", (req,res) =>{
   if (req.session.user_id){
     res.render('home',
-      {name: name
+      {name: name,
+        rankingBlackjack: rankingBlackjack,
+        rankingGoofspeil: rankingGoofspeil
     });
   } else{
     res.render('login');

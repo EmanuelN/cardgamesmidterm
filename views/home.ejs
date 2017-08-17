@@ -7,10 +7,13 @@
 <body>
   <header>
     <p>Your name:<%= name %></p>
+
     <form method="POST" action="/logout">
       <button name="logout">Logout</button>
     </form>
   </header>
   <h1>Hello World!</h1>
+  <% include ./partials/_blackjackranking %>
+  <% include ./partials/_goofspeilranking %>
 </body>
 </html>
