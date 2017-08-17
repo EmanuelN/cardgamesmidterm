@@ -71,6 +71,18 @@ app.post('/login', (req, res) =>{
   res.redirect('/');
 });
 
+//when user clicks on goofspeil
+app.get('/goofspeil', (req, res) =>{
+  if (!req.session.user_id){
+    res.render('login');
+  } else {
+    res.render('goofspeil',
+      {name: name
+    });
+  }
+})
+
+
 app.listen(8080, ()=>{
   console.log('Listening on port 8080...');
 });
