@@ -43,31 +43,20 @@ app.get("/", (req,res) =>{
             wins: rows[row].wins
           };
         }
-        if (req.session.user_id){
-          res.render('home',
+        res.render('home',
             {name: myName.name,
               rankingBlackjack: rankingBlackjack,
-              rankingGoofspeil: rankingGoofspeil
+              rankingGoofspeil: rankingGoofspeil,
+              userID: req.session.user_id
             });
-        } else{
-          res.render('login');
-        }
       });
     })
  });
 });
 
-app.get('/login', (req, res) =>{
-  if (!req.session.user_id){
-    res.render('login');
-  } else {
-    res.redirect('/');
-  }
-})
-
 app.post('/logout', (req, res) =>{
   req.session.user_id = null;
-  res.render('login');
+  res.redirect('/');
 })
 
 app.post('/login', (req, res) =>{
@@ -77,13 +66,16 @@ app.post('/login', (req, res) =>{
 
 //when user clicks on goofspeil
 app.get('/goofspeil', (req, res) =>{
+  knexhelper.name(function(err, name){
+      myName = name;
   if (!req.session.user_id){
     res.render('login');
   } else {
     res.render('goofspeil',
-      {name: name
+      {name: myName.name
     });
   }
+});
 })
 
 
