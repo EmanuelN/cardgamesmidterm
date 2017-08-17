@@ -57,6 +57,13 @@ app.get("/", (req,res) =>{
  });
 });
 
+app.post('/goofspeil/:pl1/:pl2/:win', (req, res) =>{
+   knexhelper.addpt(function(){
+       res.redirect('/');
+   }, req.params.pl1, req.params.pl2, req.params.win);
+
+});
+
 app.get('/login', (req, res) =>{
   if (!req.session.user_id){
     res.render('login');

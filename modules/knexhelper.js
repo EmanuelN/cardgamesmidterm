@@ -49,7 +49,15 @@ module.exports = {
         }
       });
       // return knex.destroy();
-    }
+  },
+  addpt: (callback, player1, player2, winnerid) =>{
+    knex.insert({player1_id: player1, player2_id: player2, winner_id: winnerid})
+    .into('goofspeils')
+    .then(()=>{
+        callback();
+  });
+  }
+
 };
 
 
