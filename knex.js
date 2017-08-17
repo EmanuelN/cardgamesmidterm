@@ -14,12 +14,30 @@ const knex = require('knex')({
   }
 });
 
-knex.select('name').from('users').where({id: 1})
-  .asCallback((err, rows) => {
-    if (err){
-    console.error(err)
-  } else{
-    console.log(rows[0].name)
+// knex.select('name').from('users').where({id: 1})
+//   .asCallback((err, rows) => {
+//     if (err){
+//     console.error(err)
+//   } else{
+//     console.log(rows[0].name)
+//   }
+//     return knex.destroy();
+// });
+let rankings = {};
+knex.select('name as player').count('winner_id as wins')
+.from('users')
+.innerJoin('blackjacks', 'users.id', 'winner_id')
+.groupBy('name').orderBy('wins', 'desc')
+.asCallback ((err, rows) => {
+  if (err){
+    console.error(err);
+  } else {
+    for (let row in rows){
+      rankings[row] = {
+        player: rows[row].player,
+        wins: rows[row].wins
+      };
+    }console.log(rankings);
   }
-    return knex.destroy();
+  return knex.destroy();
 });
