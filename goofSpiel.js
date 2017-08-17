@@ -2,13 +2,13 @@ prize = {
   suit: '',
   cards: ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
 }
-
+//score is never updated
 p1 = {
   score: 0,
   suit: '',
   cards: ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
 }
-
+//score is never updated
 p2 = {
   score: 0,
   suit: '',
@@ -90,6 +90,7 @@ function calcCard(card) {
 //function responsible for updating the players score
 //value added to the score is the upturnedCard
 function playCard(player1card, player2card, upturnedCard) {
+  console.log(`The prize card being played is: ${upturnedCard}`)
   //pass in calcCard
   if (calcCard(player1card) > calcCard(player2card)) {
     console.log("player 1 won")
@@ -102,17 +103,16 @@ function playCard(player1card, player2card, upturnedCard) {
   removedCard1 = p1.cards.splice(playedcardIndex1, 1)
   playedcardIndex2 = p2.cards.indexOf(player2card)
   removedCard2 = p2.cards.splice(playedcardIndex2, 1)
-  console.log(`The card being played is: ${upturnedCard}`)
   console.log(player1Score)
   console.log(player2Score)
 }
 
 function playGame() {
   while (prize.cards.length > 0) {
-    var p1choice = Math.floor(Math.random() * 13)
+
     cardFromDeck()
-    player1Play(p1choice)
-    player2Play(8)
+    player1Play(player1card)
+    player2Play(player2card)
     playCard(player1card, player2card, upturnedCard)
     break;
   }
