@@ -1,74 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <% const player_id = my_id %>
-  <% include ../views/partials/_head %>
-  <% include ../views/partials/_header %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>BEA - Home Page</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+   <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/app.css" type="text/css"/>
+
 
 </head>
 
   <body>
-    <div class='container-fluid'>
-      <div class = 'row opponent cards'>
-      <% if (matchData.activeplayer_cards) { %>
-        <% for (i = 0; i < matchData.activeplayer_cards.length; i++) { %>
-          <% include ../views/partials/_blank_card %>
-        <% } %>
-      <% } %>
-      </div>
+  <div class= "nav-bar">
+  </div>
 
-      <div class='row play-area'>
-        <div class='scoreboard'>
-          <div class='activePlayer-score col-sm-3'>
-            <center>
-              <h5>HOME</h5>
-              <h2 class='score'><%= matchData.activeplayer_score %></h2>
-            </center>
-          </div>
-        </div>
+  <div class = "opponent">
 
-        <div class='myMove cards col-sm-2'>
-          <% if (matchData.activeplayer_last_turn !== null) { %>
-            <% var suit = matchData.activeplayer_last_turn.suit %>
-            <% var cardNum = matchData.activeplayer_last_turn.value %>
-            <% include ../views/partials/_card %>
-          <% } %>
-        </div>
 
-        <div class='deck cards col-sm-2'>
-          <% if (matchData.deck_cards !== undefined) { %>
-            <% var suit = matchData.deck_cards.suit %>
-            <% var cardNum = matchData.deck_cards.value %>
-            <% include ../views/partials/_card %>
-          <% } else { %>
-            <h2>GAME OVER</h2>
-          <% } %>
-        </div>
 
-        <div class='theirMove cards col-sm-2'>
-        </div>
 
-        <div class='scoreboard'>
-          <div class='opponent-score col-sm-3'>
-            <center>
-              <h5>AWAY</h5>
-              <h2 class='score'><%= matchData.opponent_score %></h2>
-            </center>
-          </div>
-        </div>
-      </div>
+  </div>
 
-      <div class = 'row activePlayer cards'>
-        <% for (card in matchData.activeplayer_cards) { %>
-          <% var currCard = matchData.activeplayer_cards[card] %>
-          <% var suit = currCard.suit %>
-          <% var cardNum = currCard.value %>
-          <% include ../views/partials/_card %>
-        <% } %>
+  <div class= "prize">
 
-      </div>
-    </div>
+  </div>
+
+  <div class= "player_deck">
+
+  </div>
+
   </body>
 
-  <% include ../views/partials/_footer %>
+
 </html>
