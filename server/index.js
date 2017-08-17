@@ -20,8 +20,6 @@ app.set('view engine', 'ejs');
 const knexhelper = require('../modules/knexhelper.js');
 
 
-
-
 //ROUTES
 app.get("/", (req,res) =>{
   let rankingGoofspeil = {};
@@ -52,6 +50,13 @@ app.get("/", (req,res) =>{
       });
     })
  });
+});
+
+app.post('/goofspeil/:pl1/:pl2/:win', (req, res) =>{
+   knexhelper.addpt(function(){
+       res.redirect('/');
+   }, req.params.pl1, req.params.pl2, req.params.win);
+
 });
 
 app.post('/logout', (req, res) =>{

@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-console.log('Searching....');
+console.log('Adding....');
 
 const knex = require('knex')({
   client: 'pg',
@@ -23,21 +23,12 @@ const knex = require('knex')({
 //   }
 //     return knex.destroy();
 // });
-let rankings = {};
-knex.select('name as player').count('winner_id as wins')
-.from('users')
-.innerJoin('blackjacks', 'users.id', 'winner_id')
-.groupBy('name').orderBy('wins', 'desc')
-.asCallback ((err, rows) => {
-  if (err){
-    console.error(err);
-  } else {
-    for (let row in rows){
-      rankings[row] = {
-        player: rows[row].player,
-        wins: rows[row].wins
-      };
-    }console.log(rankings);
-  }
-  return knex.destroy();
-});
+knex.insert({player1_id: 2, player2_id: 3, winner_id: 2})
+.into('goofspeils')
+.then(() => {
+  knex.select('*').from('goofspeils')
+  .asCallback((err, rows)=>{
+    return knex.destroy();
+  });
+})
+
