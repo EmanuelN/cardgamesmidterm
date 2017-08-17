@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-console.log('Adding....');
+console.log('Searching....');
 
 const knex = require('knex')({
   client: 'pg',
@@ -14,21 +14,21 @@ const knex = require('knex')({
   }
 });
 
-// knex.select('name').from('users').where({id: 1})
-//   .asCallback((err, rows) => {
-//     if (err){
-//     console.error(err)
-//   } else{
-//     console.log(rows[0].name)
-//   }
-//     return knex.destroy();
-// });
-knex.insert({player1_id: 2, player2_id: 3, winner_id: 2})
-.into('goofspeils')
-.then(() => {
-  knex.select('*').from('goofspeils')
-  .asCallback((err, rows)=>{
-    return knex.destroy();
-  });
-})
+const subquery = knex.select('winner_id').from('goofspeils');
 
+function test(testid) {
+  knex('users').select('id')
+  .whereIn('id', subquery)
+  .asCallback((err, rows)=>{
+      console.log(testid)
+      console.log(rows)
+      for (let row in rows){
+      if (rows[row].id == testid){
+        console.log('true')
+        return knex.destroy()
+      }
+    }
+      console.log('false')
+    return knex.destroy()
+  });
+}
