@@ -60,10 +60,7 @@ module.exports = {
       }else{
         console.log('working')
         callback();
-<<<<<<< HEAD
       }
-=======
->>>>>>> feature/rankings_style
     });
   }
 };
