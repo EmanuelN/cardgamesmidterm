@@ -55,9 +55,9 @@ module.exports = {
     .into('goofspeils')
     .then(()=>{
         callback();
-  });
+    });
   }
-
 };
+
 
 
