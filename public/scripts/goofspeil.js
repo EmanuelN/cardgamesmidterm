@@ -7,6 +7,6 @@ $(document).ready(function(){
 });
 
 // define function to assign cards a value--incomplete
-assignCards: function() {
+/*assignCards: function() {
       $('.player-card-deck').each(function(index) {
-        $(this).attr();
+        $(this).attr();*/
