@@ -1,9 +1,28 @@
-    <p>Blackjack rankings:
+<!--     <p>Blackjack rankings:
+<% for (key in rankingBlackjack) { %>
+<p>
+Rank: <%= Number(key) + 1%>
+Name: <%= rankingBlackjack[key].player %>
+Wins: <%= rankingBlackjack[key].wins %>
+</p>
+<% } %>
+</p> -->
+
+  <table>
+  <th>Blackjack rankings:</th>
+  <table class="rankings table table-hover">
+  <thead>
+    <th>Rank</th>
+    <th>Player</th>
+    <th>Wins</th>
+  </thead>
+   <tbody>
     <% for (key in rankingBlackjack) { %>
-    <p>
-    Rank: <%= Number(key) + 1%>
-    Name: <%= rankingBlackjack[key].player %>
-    Wins: <%= rankingBlackjack[key].wins %>
-    </p>
-    <% } %>
-    </p>
+      <tr>
+        <td><%= Number(key) + 1%></td>
+        <td><%= rankingBlackjack[key].player %></td>
+        <td><%= rankingBlackjack[key].wins %></td>
+      </tr>
+      <% } %>
+   <tbody>
+</table>
