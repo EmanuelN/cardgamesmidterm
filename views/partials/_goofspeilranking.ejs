@@ -1,9 +1,20 @@
-    <p>Goofspeil rankings:
+<table>
+  <th>Goofspeil rankings:</th>
+
+<table class="rankings table table-hover">
+  <thead>
+    <th>Rank</th>
+    <th>Player</th>
+    <th>Wins</th>
+  </thead>
+
+   <tbody>
     <% for (key in rankingGoofspeil) { %>
-    <p>
-    Rank: <%= Number(key) + 1%>
-    Name: <%= rankingGoofspeil[key].player %>
-    Wins: <%= rankingGoofspeil[key].wins %>
-    </p>
-    <% } %>
-    </p>
+      <tr>
+        <td><%= Number(key) + 1%></td>
+        <td><%= rankingGoofspeil[key].player %></td>
+        <td><%= rankingGoofspeil[key].wins %></td>
+      </tr>
+      <% } %>
+   <tbody>
+</table>

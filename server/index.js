@@ -45,7 +45,8 @@ app.get("/", (req,res) =>{
             {name: myName.name,
               rankingBlackjack: rankingBlackjack,
               rankingGoofspeil: rankingGoofspeil,
-              userID: req.session.user_id
+              userID: req.session.user_id,
+
             });
       });
     })

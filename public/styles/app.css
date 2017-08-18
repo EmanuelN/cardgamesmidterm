@@ -1,5 +1,18 @@
 .container{
+  width: 90%;
+  margin:0 auto;
+}
 
+.prize {
+  background: green;
+}
+
+.opponent{
+  background: lightgrey;
+}
+
+.player_deck{
+  background: aliceblue;
 }
 
 
@@ -23,13 +36,16 @@
 .card-deck{
   height: 5em;
   width: 10em;
+  margin: 0.5em;
 }
 
 .logo{
     height: 10em;
     width: 15em;
-    float: left;
     position: relative;
 }
 
+.rankings{
+  width: 6em;
+}
 
