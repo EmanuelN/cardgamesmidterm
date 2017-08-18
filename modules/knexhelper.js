@@ -89,7 +89,7 @@ module.exports = {
     })
   },
   goofspeilobject: (gameid, player, callback) =>{
-    let obj = {}
+    let obj = {p1:{},p2:{},prize:{}}
 
     //get p1's info (hand, score and staging)
     function p1(cbp1, cbp2) {
@@ -102,13 +102,15 @@ module.exports = {
           }
         }
         if(player == 1){
-          obj.player1hand = array;
-          obj.player1score = rows[0].score;
-          obj.player1stage = rows[0].staging;
+          obj.p1.suit = rows[0].suit
+          obj.p1.cards = array;
+          obj.p1.score = rows[0].score;
+          obj.p1.stage = rows[0].staging;
         } else {
-          obj.player2hand = array;
-          obj.player2score = rows[0].score;
-          obj.player2stage = rows[0].staging
+          obj.p2.suit = rows[0].suit
+          obj.p2.cards = array;
+          obj.p2.score = rows[0].score;
+          obj.p2.stage = rows[0].staging;
         }
         cbp1(cbp2)
       })
@@ -123,7 +125,8 @@ module.exports = {
             array.push(row);
           }
         }
-        obj.deck = array;
+        obj.prize.cards = array;
+        obj.prize.suit = rows[0].suit;
         cb(cb2, cb3)
       })
     }
@@ -138,13 +141,15 @@ module.exports = {
           }
         }
         if(player == 2){
-          obj.player1hand = array;
-          obj.player1score = rows[0].score;
-          obj.player1stage = rows[0].staging;
+          obj.p1.suit = rows[0].suit
+          obj.p1.cards = array;
+          obj.p1.score = rows[0].score;
+          obj.p1.stage = rows[0].staging;
         } else {
-          obj.player2hand = array;
-          obj.player2score = rows[0].score;
-          obj.player2stage = rows[0].staging
+          obj.p2.suit = rows[0].suit
+          obj.p2.cards = array;
+          obj.p2.score = rows[0].score;
+          obj.p2.stage = rows[0].staging;
         }
         callback(obj)
       })
