@@ -52,6 +52,12 @@ app.get("/", (req,res) =>{
     })
  });
 });
+
+app.get('/goofspeil/:id/:player', (req, res)=>{
+  knexhelper.goofspeilobject(req.params.id, req.params.player, (obj)=>{
+    res.end(obj.toString());
+  })
+})
 // Pass obj generated from getting data in db to goofspeil so it can render
 // app.get('/goofspeil/:id/:player', (req, res)=>{
 //   knexhelper.getgoofspeil(req.params.id, req.params.player, function(obj){
