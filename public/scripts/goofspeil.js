@@ -1,19 +1,19 @@
 
 let gameState = {
   prize: {
-    suit: '',
+    suit: 'diamonds',
     cards: ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
 
   },
   p1: {
     score: 0,
-    suit: '',
+    suit: 'spades',
     cards: ['A','2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'],
     stage: ''
   },
   p2: {
     score: 0,
-    suit: '',
+    suit: 'hearts',
     cards: ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'],
     stage: ''
   }
@@ -60,14 +60,14 @@ function calcCard(card) {
   return card
 }
 
-
-$(document).ready(function(){
-  $('.player-card-deck').on('click', function() {
-    $(this).animate({
-      opacity: 0
-    }).removeClass('.card-deck');
-  })
-})
+//
+// $(document).ready(function(){
+//   $('.player-card-deck').on('click', function() {
+//     $(this).animate({
+//       opacity: 0
+//     }).removeClass('.card-deck');
+//   })
+// })
 
 //this card needs to flip when both cards dissappear
 function cardFromDeck() {
@@ -99,6 +99,3 @@ function scoring(card1, card2, upturnedCard){
   }
   return gameState
 }
-console.log(gameState)
-x = gameState.prize.suit + gameState.prize.cards[1]
-console.log(x)

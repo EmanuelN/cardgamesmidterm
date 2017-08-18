@@ -21,12 +21,6 @@
 
 </head>
 
-<script>
-gamestate.p1.suit
-</script>
-
-
-
 <body class="bump-down">
 
   <div class= "nav-bar">
@@ -37,19 +31,19 @@ gamestate.p1.suit
       <div class='row play-area'>
 
         <div class = "opponent row-sm-3">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= p1.suit + p1.cards[0] %>">
-          <img class="opponent-card-deck card-deck" id="card-2-opponent" src="/images/cards/<%= p1.suit + p1.cards[1] %>">
-          <img class="opponent-card-deck card-deck" id="card-3-opponent" src="/images/cards/<%= p1.suit + p1.cards[2] %>">
-          <img class="opponent-card-deck card-deck" id="card-4-opponent" src="/images/cards/<%= p1.suit + p1.cards[3] %>">
-          <img class="opponent-card-deck card-deck" id="card-5-opponent" src="/images/cards/<%= p1.suit + p1.cards[4] %>">
-          <img class="opponent-card-deck card-deck" id="card-6-opponent" src="/images/cards/<%= p1.suit + p1.cards[5] %>">
-          <img class="opponent-card-deck card-deck" id="card-7-opponent" src="/images/cards/<%= p1.suit + p1.cards[6] %>">
-          <img class="opponent-card-deck card-deck" id="card-8-opponent" src="/images/cards/<%= p1.suit + p1.cards[7] %>">
-          <img class="opponent-card-deck card-deck" id="card-9-opponent" src="/images/cards/<%= p1.suit + p1.cards[8] %>">
-          <img class="opponent-card-deck card-deck" id="card-10-opponent" src="/images/cards/<%= p1.suit + p1.cards[9] %>">
-          <img class="opponent-card-deck card-deck" id="card-11-opponent" src="/images/cards/<%= p1.suit + p1.cards[10] %>">
-          <img class="opponent-card-deck card-deck" id="card-12-opponent" src="/images/cards/<%= p1.suit + p1.cards[11] %>">
-          <img class="opponent-card-deck card-deck" id="card-13-opponent" src="/images/cards/<%= p1.suit + p1.cards[12] %>">
+          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= gameState.p1.cards[0] + gameState.p1.suit %>">
+          <img class="opponent-card-deck card-deck" id="card-2-opponent" src="/images/cards/<%= gameState.p1.cards[1] + gameState.p1.suit %>">
+          <img class="opponent-card-deck card-deck" id="card-3-opponent" src="/images/cards/<%= gameState.p1.cards[2] + gameState.p1.suit %>">
+          <img class="opponent-card-deck card-deck" id="card-4-opponent" src="/images/cards/<%= gameState.p1.cards[3] + gameState.p1.suit %>">
+          <img class="opponent-card-deck card-deck" id="card-5-opponent" src="/images/cards/<%= gameState.p1.cards[4] + gameState.p1.suit %>">
+          <img class="opponent-card-deck card-deck" id="card-6-opponent" src="/images/cards/<%= gameState.p1.cards[5] + gameState.p1.suit %>">
+          <img class="opponent-card-deck card-deck" id="card-7-opponent" src="/images/cards/<%= gameState.p1.cards[6] + gameState.p1.suit %>">
+          <img class="opponent-card-deck card-deck" id="card-8-opponent" src="/images/cards/<%= gameState.p1.cards[7] + gameState.p1.suit %>">
+          <img class="opponent-card-deck card-deck" id="card-9-opponent" src="/images/cards/<%= gameState.p1.cards[8] + gameState.p1.suit %>">
+          <img class="opponent-card-deck card-deck" id="card-10-opponent" src="/images/cards/<%= gameState.p1.cards[9] + gameState.p1.suit %>">
+          <img class="opponent-card-deck card-deck" id="card-11-opponent" src="/images/cards/<%= gameState.p1.cards[10] + gameState.p1.suit %>">
+          <img class="opponent-card-deck card-deck" id="card-12-opponent" src="/images/cards/<%= gameState.p1.cards[11] + gameState.p1.suit %>">
+          <img class="opponent-card-deck card-deck" id="card-13-opponent" src="/images/cards/<%= gameState.p1.cards[12] + gameState.p1.suit %>">
           <div class="navbar-form navbar-right">Player 1  Score:<%= name %></div>
         </div>
         <br>
@@ -63,19 +57,19 @@ gamestate.p1.suit
         <br>
         <br>
         <div class= "player_deck row-sm-3">
-          <img class="player-card-deck card-deck" id="card-1-player" src="/images/cards/<%= p2.suit + p2.cards[0] %>">
-          <img class="player-card-deck card-deck" id="card-2-player" src="/images/cards/<%= p2.suit + p2.cards[1] %>">
-          <img class="player-card-deck card-deck" id="card-3-player" src="/images/cards/<%= p2.suit + p2.cards[2] %>">
-          <img class="player-card-deck card-deck" id="card-4-player" src="/images/cards/<%= p2.suit + p2.cards[3] %>">
-          <img class="player-card-deck card-deck" id="card-5-player" src="/images/cards/<%= p2.suit + p2.cards[4] %>">
-          <img class="player-card-deck card-deck" id="card-6-player" src="/images/cards/<%= p2.suit + p2.cards[5] %>">
-          <img class="player-card-deck card-deck" id="card-7-player" src="/images/cards/<%= p2.suit + p2.cards[6] %>">
-          <img class="player-card-deck card-deck" id="card-8-player" src="/images/cards/<%= p2.suit + p2.cards[7] %>">
-          <img class="player-card-deck card-deck" id="card-9-player" src="/images/cards/<%= p2.suit + p2.cards[8] %>">
-          <img class="player-card-deck card-deck" id="card-10-player" src="/images/cards/<%= p2.suit + p2.cards[9] %>">
-          <img class="player-card-deck card-deck" id="card-11-player" src="/images/cards/<%= p2.suit + p2.cards[10] %>">
-          <img class="player-card-deck card-deck" id="card-12-player" src="/images/cards/<%= p2.suit + p2.cards[11] %>">
-          <img class="player-card-deck card-deck" id="card-13-player" src="/images/cards/<%= p2.suit + p2.cards[12] %>">
+          <img class="player-card-deck card-deck" id="card-1-player" src="/images/cards/<%= gameState.p2.cards[0] + gameState.p2.suit %>">
+          <img class="player-card-deck card-deck" id="card-2-player" src="/images/cards/<%= gameState.p2.cards[1] + gameState.p2.suit %>">
+          <img class="player-card-deck card-deck" id="card-3-player" src="/images/cards/<%= gameState.p2.cards[2] + gameState.p2.suit %>">
+          <img class="player-card-deck card-deck" id="card-4-player" src="/images/cards/<%= gameState.p2.cards[3] + gameState.p2.suit %>">
+          <img class="player-card-deck card-deck" id="card-5-player" src="/images/cards/<%= gameState.p2.cards[4] + gameState.p2.suit %>">
+          <img class="player-card-deck card-deck" id="card-6-player" src="/images/cards/<%= gameState.p2.cards[5] + gameState.p2.suit %>">
+          <img class="player-card-deck card-deck" id="card-7-player" src="/images/cards/<%= gameState.2.cards[6] + gameState.p2.suit %>">
+          <img class="player-card-deck card-deck" id="card-8-player" src="/images/cards/<%= gameState.p2.cards[7] + gameState.p2.suit %>">
+          <img class="player-card-deck card-deck" id="card-9-player" src="/images/cards/<%= gameState.p2.cards[8] + gameState.p2.suit %>">
+          <img class="player-card-deck card-deck" id="card-10-player" src="/images/cards/<%= gameState.p2.cards[9] + gameState.p2.suit %>">
+          <img class="player-card-deck card-deck" id="card-11-player" src="/images/cards/<%= gameState.p2.cards[10] + gameState.p2.suit %>">
+          <img class="player-card-deck card-deck" id="card-12-player" src="/images/cards/<%= gameState.p2.cards[11] + gameState.p2.suit %>">
+          <img class="player-card-deck card-deck" id="card-13-player" src="/images/cards/<%= gameState.p2.cards[12] + gameState.p2.suit %>">
           <div class="navbar-form navbar-right">Player 2 Score:<%= name %></div>
         </div>
         <br>
