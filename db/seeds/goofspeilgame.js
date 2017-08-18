@@ -5,9 +5,9 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('goofspeilp1hands').insert([
-        {gameid: 1},
-        {gameid: 2},
-        {gameid: 3}
+        {gameid: 1, suit: 'spades'},
+        {gameid: 2, suit: 'hearts'},
+        {gameid: 3, suit: 'clubs'}
       ]);
     });
 }
