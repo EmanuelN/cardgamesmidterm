@@ -51,18 +51,30 @@ app.get("/", (req,res) =>{
     })
  });
 });
+// Pass obj generated from getting data in db to goofspeil so it can render
+// app.get('/goofspeil/:id/:player', (req, res)=>{
+//   knexhelper.getgoofspeil(req.params.id, req.params.player, function(obj){
+//     res.render('goofspeil', obj);
+//   })
+// });
+// Get obj passed from game at end of turn, update information in db then get
+// app.post('/goofspeil/:id/:player', (req, res)=>{
+//   knexhelper.postgoofspeil(req.params.id, req.params.player, function(obj){
+//     res.redirect(`/goofspeil/${req.params.id}/${req.params.player}`);
+//   })
+// });
 
 app.get('/:game/matchmaking/', (req,res)=>{
   knexhelper.matchmaking(req.params.game, 2, function(id){
     res.end(id)
   })
-})
+});
 
 app.post('/:game/newgame/', (req,res)=>{
   knexhelper.creatematch(req.params.game, 1, function(id){
     res.end(id)
   })
-})
+});
 
 app.post('/goofspeil/:pl1/:pl2/:win', (req, res) =>{
    knexhelper.addpt(function(){
