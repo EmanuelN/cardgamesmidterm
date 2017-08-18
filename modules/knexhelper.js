@@ -65,7 +65,7 @@ module.exports = {
   },
 
   matchmaking: (game, player2, callback) =>{
-    const subquery = knex(game).select('id').where({player2_id: null});
+    const subquery = knex(game+'s').select('id').where({player2_id: null});
 
     knex(game).select('*').whereIn('id', subquery)
     .asCallback((err, rows) => {
@@ -79,10 +79,9 @@ module.exports = {
     })
   },
   creatematch: (game, player1, callback) =>{
-    knex(game).returning('id')
+    knex(game+'s').returning('id')
     .insert({player1_id: player1})
     .asCallback((err, id)=>{
-      console.log(id)
       callback(id.toString())
     })
   }
