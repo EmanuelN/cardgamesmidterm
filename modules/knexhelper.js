@@ -97,9 +97,13 @@ module.exports = {
       .asCallback((err, rows)=>{
         let array = [];
         for (let row in rows[0]){
-          if(rows[0][row] === true){
-            array.push(row);
-          }
+            if(rows[0][row] === true){
+              if (row == 'A'){
+                array.unshift(row)
+              } else {
+              array.push(row);
+              }
+            }
         }
         if(player == 1){
           obj.p1.suit = rows[0].suit
@@ -137,7 +141,11 @@ module.exports = {
         let array = [];
         for (let row in rows[0]){
           if(rows[0][row] === true){
+            if (row == 'A'){
+              array.unshift(row)
+            } else {
             array.push(row);
+           }
           }
         }
         if(player == 2){

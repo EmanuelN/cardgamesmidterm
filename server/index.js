@@ -55,7 +55,11 @@ app.get("/", (req,res) =>{
 
 app.get('/goofspeil/:id/:player', (req, res)=>{
   knexhelper.goofspeilobject(req.params.id, req.params.player, (obj)=>{
-    res.send(obj);
+        res.render('goofspeil',
+      {
+        user: obj,
+        name: 'Emanuel'
+    });
   })
 })
 // Pass obj generated from getting data in db to goofspeil so it can render
@@ -139,7 +143,7 @@ app.get('/goofspeil', (req, res) =>{
       {
         user: gameState,
         name: myName.name
-    });
+    })
   }
 });
 })
