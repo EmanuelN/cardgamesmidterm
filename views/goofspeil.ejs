@@ -31,19 +31,9 @@
       <div class='row play-area'>
 
         <div class = "opponent row-sm-3">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p1.cards[0]+user.p1.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p1.cards[1]+user.p1.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p1.cards[2]+user.p1.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p1.cards[3]+user.p1.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p1.cards[4]+user.p1.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p1.cards[5]+user.p1.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p1.cards[6]+user.p1.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p1.cards[7]+user.p1.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p1.cards[8]+user.p1.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p1.cards[9]+user.p1.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p1.cards[10]+user.p1.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p1.cards[11]+user.p1.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p1.cards[12]+user.p1.suit%>.png">
+          <% for(var i=0; i<user.p1.cards.length; i++) {%>
+            <img class="opponent-card-deck card-deck" src="/images/cards/<%= user.p1.cards[i]+user.p1.suit%>.png">
+              <% } %>
 
           <div class="navbar-form navbar-right">Player 1  Score:<%= name %></div>
         </div>
@@ -58,19 +48,9 @@
         <br>
         <br>
         <div class= "player_deck row-sm-3">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p2.cards[0]+user.p2.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p2.cards[1]+user.p2.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p2.cards[2]+user.p2.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p2.cards[3]+user.p2.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p2.cards[4]+user.p2.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p2.cards[5]+user.p2.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p2.cards[6]+user.p2.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p2.cards[7]+user.p2.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p2.cards[8]+user.p2.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p2.cards[9]+user.p2.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p2.cards[10]+user.p2.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p2.cards[11]+user.p2.suit%>.png">
-          <img class="opponent-card-deck card-deck" id="card-1-opponent" src="/images/cards/<%= user.p2.cards[12]+user.p2.suit%>.png">
+          <% for(var i=0; i<user.p2.cards.length; i++) {%>
+            <img class="opponent-card-deck card-deck" src="/images/cards/<%= user.p2.cards[i]+user.p1.suit%>.png">
+              <% } %>
 
           <div class="navbar-form navbar-right">Player 2 Score:<%= name %></div>
         </div>

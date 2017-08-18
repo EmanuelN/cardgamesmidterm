@@ -60,14 +60,14 @@ function calcCard(card) {
   return card
 }
 
-//
-// $(document).ready(function(){
-//   $('.player-card-deck').on('click', function() {
-//     $(this).animate({
-//       opacity: 0
-//     }).removeClass('.card-deck');
-//   })
-// })
+
+$(document).ready(function(){
+  $('.player-card-deck').on('click', function() {
+    $(this).animate({
+      opacity: 0
+    }).removeClass('.card-deck');
+  })
+})
 
 //this card needs to flip when both cards dissappear
 function cardFromDeck() {
