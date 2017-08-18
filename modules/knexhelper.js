@@ -62,6 +62,29 @@ module.exports = {
         callback();
       }
     });
+  },
+
+  matchmaking: (game, player2, callback) =>{
+    const subquery = knex(game).select('id').where({player2_id: null});
+
+    knex(game).select('*').whereIn('id', subquery)
+    .asCallback((err, rows) => {
+      if (err){
+        console.error(err);
+      } else {
+        knex('test').where({id: rows[0].id})
+        .update({player2_id: player2})
+        .then(callback(rows[0].id.toString()))
+      }
+    })
+  },
+  creatematch: (game, player1, callback) =>{
+    knex(game).returning('id')
+    .insert({player1_id: player1})
+    .asCallback((err, id)=>{
+      console.log(id)
+      callback(id.toString())
+    })
   }
 };
 
