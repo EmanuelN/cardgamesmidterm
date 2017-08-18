@@ -101,6 +101,27 @@ app.post('/login', (req, res) =>{
   res.redirect('/');
 });
 
+//dummy data used to render goofspeil
+let gameState = {
+  prize: {
+    suit: 'diamonds',
+    cards: ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+
+  },
+  p1: {
+    score: 0,
+    suit: 'spades',
+    cards: ['A','2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'],
+    stage: ''
+  },
+  p2: {
+    score: 0,
+    suit: 'hearts',
+    cards: ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'],
+    stage: ''
+  }
+}
+
 //when user clicks on goofspeil
 app.get('/goofspeil', (req, res) =>{
   knexhelper.name(function(err, name){
@@ -109,7 +130,9 @@ app.get('/goofspeil', (req, res) =>{
     res.redirect('/');
   } else {
     res.render('goofspeil',
-      {name: myName.name
+      {
+        user: gameState, 
+        name: myName.name
     });
   }
 });
