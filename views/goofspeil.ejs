@@ -35,7 +35,7 @@
             <img class="opponent-card-deck card-deck" src="/images/cards/<%= user.p1.cards[i]+user.p1.suit%>.png">
               <% } %>
 
-          <div class="navbar-form navbar-right">Player 1  Score:<%= name %></div>
+          <div class="navbar-form navbar-right">Player 1  Score: <%= user.p1.score %></div>
         </div>
         <br>
 
@@ -52,7 +52,7 @@
             <img class="opponent-card-deck card-deck" src="/images/cards/<%= user.p2.cards[i]+user.p1.suit%>.png">
               <% } %>
 
-          <div class="navbar-form navbar-right">Player 2 Score:<%= name %></div>
+          <div class="navbar-form navbar-right">Player 2 Score: <%= user.p2.score %></div>
         </div>
         <br>
       </div>
