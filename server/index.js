@@ -53,11 +53,13 @@ app.get("/", (req,res) =>{
  });
 });
 
-app.get('/goofspeil/:id/:player', (req, res)=>{
+app.get('/goofspeil/:id/:player/', (req, res)=>{
   knexhelper.goofspeilobject(req.params.id, req.params.player, (obj)=>{
         res.render('goofspeil',
       {
         user: obj,
+        gameid: req.params.id,
+        playerid: req.params.player,
         name: 'Emanuel'
     });
   })
@@ -111,6 +113,22 @@ app.post('/login', (req, res) =>{
   res.redirect('/');
 });
 
+//when user clicks on goofspeil
+app.get('/goofspeil', (req, res) =>{
+  knexhelper.name(function(err, name){
+      myName = name;
+  if (!req.session.user_id){
+    res.redirect('/');
+  } else {
+    res.render('goofspeil',
+      {
+        user: gameState,
+        name: myName.name
+    })
+  }
+});
+})
+
 //dummy data used to render goofspeil
 let gameState = {
   prize: {
@@ -131,22 +149,6 @@ let gameState = {
     stage: ''
   }
 }
-
-//when user clicks on goofspeil
-app.get('/goofspeil', (req, res) =>{
-  knexhelper.name(function(err, name){
-      myName = name;
-  if (!req.session.user_id){
-    res.redirect('/');
-  } else {
-    res.render('goofspeil',
-      {
-        user: gameState,
-        name: myName.name
-    })
-  }
-});
-})
 
 
 app.listen(8080, ()=>{
