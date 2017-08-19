@@ -134,11 +134,7 @@ module.exports = {
         //card in the users hand
         for (let row in rows[0]){
             if(rows[0][row] === true){
-              if (row == 'A'){
-                array.unshift(row)
-              } else {
               array.push(row);
-              }
             }
         }
         //If the player is player1, then the player1 suit, score, cards and
@@ -189,11 +185,7 @@ module.exports = {
         //card in the users hand
         for (let row in rows[0]){
           if(rows[0][row] === true){
-            if (row == 'A'){
-              array.unshift(row)
-            } else {
             array.push(row);
-           }
           }
         }
         if(player == 2){
