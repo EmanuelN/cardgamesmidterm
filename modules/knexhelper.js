@@ -1,4 +1,8 @@
+//dotenv is a zero dependency module,
+//loads environment variables from a .env file into
+//process.env
 require('dotenv').config();
+//knex is a sql query builder, here we use it for Postgres
 const knex = require('knex')({
   client: 'pg',
   connection: {
@@ -13,6 +17,9 @@ const knex = require('knex')({
 
 module.exports = {
   goofspeil: function goofspeilsRankings(callback){
+    //here we create a goofspeilRankings function that counts how many
+    //times a users id is present in winner_id. The greater the wins, the
+    //higher the users rank, arranged with greatest number of wins first
     knex.select('name as player').count('winner_id as wins')
     .from('users')
     .innerJoin('goofspeils', 'users.id', 'winner_id')
@@ -37,6 +44,8 @@ module.exports = {
     });
   },
   blackjack: (callback) => {
+    //same scoring function as above except this time, we apply this on
+    //for the game blackjack
     knex.select('name as player').count('winner_id as wins')
     .from('users')
     .innerJoin('blackjacks', 'users.id', 'winner_id')
@@ -50,6 +59,8 @@ module.exports = {
       });
       // return knex.destroy();
   },
+  //adds both of the players id's into the table as well as the winner
+  // of the game between the two players
   addpt: (callback, player1, player2, winnerid, table) =>{
     knex.insert({player1_id: player1, player2_id: player2, winner_id: winnerid})
     .into(table)
@@ -63,7 +74,8 @@ module.exports = {
       }
     });
   },
-
+  //matchmaking function, works on the logic that if there is no player2
+  //you become player2 and join an already created game
   matchmaking: (game, player2, callback) =>{
     const subquery = knex(game+'s').select('id').where({player2_id: null});
 
@@ -78,6 +90,9 @@ module.exports = {
       }
     })
   },
+
+  //creatematch function, works on the logic that if you create a new game,
+  //you take on the id of player1
   creatematch: (game, player1, callback) =>{
     knex(game+'s').returning('id')
     .insert({player1_id: player1})
@@ -88,14 +103,18 @@ module.exports = {
       callback(id.toString())
     })
   },
+
   goofspeilobject: (gameid, player, callback) =>{
     let obj = {p1:{},p2:{},prize:{}}
-
-    //get p1's info (hand, score and staging)
+    //intializes an object consisting of objects that contains all the
+    //characteristics for the players as well as for the prize
     function p1(cbp1, cbp2) {
       knex('goofspeilp1hands').select('*').where('gameid', gameid)
       .asCallback((err, rows)=>{
         let array = [];
+        //row is card, pushes card into the array (which is your hand)
+        //function is used to ensure that the 'A' shows up as the first
+        //card in the users hand
         for (let row in rows[0]){
             if(rows[0][row] === true){
               if (row == 'A'){
@@ -105,6 +124,10 @@ module.exports = {
               }
             }
         }
+        //If the player is player1, then the player1 suit, score, cards and
+        //stage card get updated.
+        //The stage card is the card that is currently being played by the
+        //player during 'this' turn
         if(player == 1){
           obj.p1.suit = rows[0].suit
           obj.p1.cards = array;
@@ -119,7 +142,7 @@ module.exports = {
         cbp1(cbp2)
       })
     }
-
+    //this function deals with the characteristics of the deck
     function deck(cb, cb2, cb3){
       knex('goofspeildeck').select('*').where('gameid', gameid)
       .asCallback((err, rows)=>{
@@ -136,11 +159,17 @@ module.exports = {
         cb(cb2, cb3)
       })
     }
-    //get p2's info (hand, score and staging)
+    //If the player is player1, then the player1 suit, score, cards and
+    //stage card get updated.
+    //The stage card is the card that is currently being played by the
+    //player during 'this' turn
     function p2(cbp2){
       knex('goofspeilp2hands').select('*').where('gameid', gameid)
       .asCallback((err, rows)=>{
         let array = [];
+        //row is card, pushes card into the array (which is your hand)
+        //function is used to ensure that the 'A' shows up as the first
+        //card in the users hand
         for (let row in rows[0]){
           if(rows[0][row] === true){
             if (row == 'A'){
@@ -167,6 +196,3 @@ module.exports = {
     deck(p1, p2, callback);
   }
 };
-
-
-

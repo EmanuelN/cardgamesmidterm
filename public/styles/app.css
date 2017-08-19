@@ -1,18 +1,28 @@
+.bump-down{
+    max-width: 97%;
+    width: 100%;
+    padding: 0 20px;
+    margin: 20px 0 0;
+    box-sizing: border-box;
+}
+
+
+
 .container{
   width: 90%;
   margin:0 auto;
 }
 
 .prize {
-  background: green;
+  box-shadow: 10px 10px 10px #ccc;
 }
 
 .opponent{
-  background: lightgrey;
+  box-shadow: 10px 10px 10px #ccc;
 }
 
 .player_deck{
-  background: aliceblue;
+  box-shadow: 10px 10px 10px #ccc;
 }
 
 
@@ -34,9 +44,16 @@
 }
 
 .card-deck{
-  height: 5em;
-  width: 5em;
+  align-content: center;
+  height: 5.5em;
+  width: 5.5em;
   margin: 0.5em;
+  box-shadow: 10px 10px 10px #ccc;
+}
+
+.player-card-deck:hover {
+  cursor: pointer;
+  border: 3px solid blue;
 }
 
 .logo{

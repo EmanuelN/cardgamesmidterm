@@ -32,27 +32,28 @@
 
         <div class = "opponent row-sm-3">
           <% for(var i=0; i<user.p1.cards.length; i++) {%>
-            <img class="opponent-card-deck card-deck" src="/images/cards/<%= user.p1.cards[i]+user.p1.suit%>.png">
+            <img class="opponent-card-deck card-deck" src="/images/cards/back.jpg">
               <% } %>
 
-          <div class="navbar-form navbar-right">Player 1  Score:<%= name %></div>
+          <div class="navbar-form navbar-right">Player 1  Score: <%= user.p1.score %></div>
         </div>
         <br>
 
         <div class= "prize row-lg-2">
-          <img class="card-deck" id="card-deck-table" src="/images/card_logo.png">
+          <img class="card-deck" id="card-deck-table" src="/images/cards/back.jpg">
           <img class="card-deck" id="card-prize-table" src="/images/card_logo.png">
           <img class="card-deck" id="card-player1-table" src="/images/card_logo.png">
           <img class="card-deck" id="card-player2-table" src="/images/card_logo.png">
         </div>
         <br>
         <br>
+
         <div class= "player_deck row-sm-3">
           <% for(var i=0; i<user.p2.cards.length; i++) {%>
-            <img class="opponent-card-deck card-deck" src="/images/cards/<%= user.p2.cards[i]+user.p1.suit%>.png">
+            <img class="player-card-deck card-deck" src="/images/cards/<%= user.p2.cards[i]+user.p1.suit%>.png">
               <% } %>
 
-          <div class="navbar-form navbar-right">Player 2 Score:<%= name %></div>
+          <div class="navbar-form navbar-right">Player 2 Score: <%= user.p2.score %></div>
         </div>
         <br>
       </div>
