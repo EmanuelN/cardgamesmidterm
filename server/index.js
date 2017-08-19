@@ -66,7 +66,7 @@ app.get('/goofspeil/:id/:player', (req, res)=>{
 app.post('/goofspeil/:gameid/:playerid/:cardid', (req, res)=>{
   knexhelper.goofspeilplaycard(req.params.gameid, req.params.playerid, req.params.cardid,
     function(){
-      res.redirect(`/goofspeil/1/1`);
+      res.redirect(`/goofspeil/${req.params.gameid}/${req.params.playerid}`);
     })
 });
 
