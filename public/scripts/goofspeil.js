@@ -1,4 +1,4 @@
-//on click, the card disappears 
+//on click, the card disappears
 $(document).ready(function(){
   $('.player-card-deck').on('click', function() {
     $(this).animate({
@@ -10,9 +10,9 @@ $(document).ready(function(){
 $(document).ready(function(){
     $(".player-card-deck").click(function(){
         $(this).hide(".player-card-deck");
-       /* .appendTo(".prize");*/
     });
 });
+
 
 $(document).ready(function() {
   var app = {
