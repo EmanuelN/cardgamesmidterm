@@ -130,6 +130,8 @@ module.exports = {
           }
         }
         obj.prize.cards = array;
+        obj.gameid = gameid;
+        obj.playerid = player;
         obj.prize.suit = rows[0].suit;
         cb(cb2, cb3)
       })
