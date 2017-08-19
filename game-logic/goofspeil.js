@@ -1,3 +1,4 @@
+//dummy variable carrying all of the basic information to get agame running
 let gameState = {
     prize: {
       suit: 'diamonds',
@@ -59,7 +60,8 @@ let gameState = {
     return card
   }
 
-  //this card needs to flip when both cards dissappear
+  //function randomly generates a card from the deck (prize.cards)
+  //and the splices that card out from the array
   function cardFromDeck() {
     var rand = gameState.prize.cards[Math.floor(Math.random()*gameState.prize.cards.length)]
     upturnedCard = gameState.prize.cards.splice(gameState.prize.cards.indexOf(rand), 1)
@@ -69,7 +71,8 @@ let gameState = {
 
   var upturnedCard = cardFromDeck()
 
-
+//function that randomly generates a card from a player and returns it
+//splices the card out of the array
   function playCard(gameObject, cardPlayed, userID) {
     console.log(`You played ${cardPlayed}`)
     playedcardIndex = gameObject[userID].cards.indexOf(cardPlayed)
@@ -78,6 +81,9 @@ let gameState = {
     return cardPlayed
   }
 
+
+//function that scores the cards played and assigns the winner (player of the)
+//higher card) the value of the upturned card
   function scoring(card1, card2, upturnedCard){
     var player1Card = card1
     var player2Card = card2

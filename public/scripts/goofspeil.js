@@ -1,3 +1,4 @@
+//on click, the card disappears 
 $(document).ready(function(){
   $('.player-card-deck').on('click', function() {
     $(this).animate({
