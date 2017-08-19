@@ -104,6 +104,23 @@ module.exports = {
     })
   },
 
+  goofspeilplaycard: (gameid, player, cardid, callback)=>{
+    knex(`goofspeilp${[player]}hands`)
+    .where({gameid: gameid})
+    .update({[cardid]: false})
+    .asCallback((err, rows)=>{
+      if(err){
+        console.error(err);
+      }
+      knex(`goofspeilp${[player]}hands`)
+      .where({gameid: gameid})
+      .update({staging: cardid})
+      .asCallback(function(){
+        callback()
+      })
+    })
+  },
+
   goofspeilobject: (gameid, player, callback) =>{
     let obj = {p1:{},p2:{},prize:{}}
     //intializes an object consisting of objects that contains all the

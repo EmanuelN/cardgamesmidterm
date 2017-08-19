@@ -62,18 +62,13 @@ app.get('/goofspeil/:id/:player', (req, res)=>{
     });
   })
 })
-// Pass obj generated from getting data in db to goofspeil so it can render
-// app.get('/goofspeil/:id/:player', (req, res)=>{
-//   knexhelper.getgoofspeil(req.params.id, req.params.player, function(obj){
-//     res.render('goofspeil', obj);
-//   })
-// });
-// Get obj passed from game at end of turn, update information in db then get
-// app.post('/goofspeil/:id/:player', (req, res)=>{
-//   knexhelper.postgoofspeil(req.params.id, req.params.player, function(obj){
-//     res.redirect(`/goofspeil/${req.params.id}/${req.params.player}`);
-//   })
-// });
+
+app.post('/goofspeil/:gameid/:playerid/:cardid', (req, res)=>{
+  knexhelper.goofspeilplaycard(req.params.gameid, req.params.playerid, req.params.cardid,
+    function(){
+      res.redirect(`/goofspeil/1/1`);
+    })
+});
 
 app.get('/:game/matchmaking/', (req,res)=>{
   knexhelper.matchmaking(req.params.game, 2, function(id){
@@ -87,7 +82,7 @@ app.post('/:game/newgame/', (req,res)=>{
   })
 });
 
-app.post('/goofspeil/:pl1/:pl2/:win', (req, res) =>{
+app.post('/goofspeil/:gameid/win/:finalpts/:winner', (req, res) =>{
    knexhelper.addpt(function(){
        res.redirect('/');
    }, req.params.pl1, req.params.pl2, req.params.win, "goofspeils");
