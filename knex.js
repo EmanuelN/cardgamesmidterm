@@ -11,15 +11,19 @@ const knex = require('knex')({
       // ssl      : process.env.DB_SSL
   }
 });
-knex(`goofspeildeck`)
+knex(`goofspeilp1hands`)
 .select("*")
 .where({gameid : 1})
 .asCallback((err, rows)=>{
+      let array = []
   for (let row in rows[0]){
     if (rows[0][row] === true){
-      console.log(row)
+      array.push(row)
     }
+  } if (array.length === 0){
+    console.log('array empty!')
   }
+  console.log(array)
   knex.destroy()
 })
 // getStaging(1, 'p1hands', "", function(staging1){

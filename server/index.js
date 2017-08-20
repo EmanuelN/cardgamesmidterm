@@ -62,13 +62,23 @@ app.get("/", (req,res) =>{
 
 app.get('/goofspeil/:id/:player/', (req, res)=>{
   knexhelper.goofspeilobject(req.params.id, req.params.player, (obj)=>{
-        res.render('goofspeil',
-      {
-        user: obj,
-        gameid: req.params.id,
-        playerid: req.params.player,
-        name: 'Emanuel'
-    });
+    if (obj.p2.cards.length === 0){
+      console.log(`the player has ${obj.p1.score} points`)
+      if (obj.p1.score > obj.p2.score){
+        res.end("YOU WIN!!!")
+      } else {
+        res.end('YOU LOSE!!!')
+      }
+
+    } else {
+      res.render('goofspeil',
+        {
+          user: obj,
+          gameid: req.params.id,
+          playerid: req.params.player,
+          name: 'Emanuel'
+      });
+    }
   })
 })
 let cardsplayed = 0;
