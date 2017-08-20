@@ -1,25 +1,4 @@
 /*
- * Global layout stuff
- */
-html {
-  box-sizing: border-box;
-  font-family: 'Antic Didone', serif;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-/*
- * Global layout stuff
- */
-body {
-  margin: 0;
-  color: #244751;
-  /* background-color: black; */
-}
-
-/*
  * using custom fonts
  */
 @font-face {
@@ -32,12 +11,35 @@ body {
   src: url("../fonts/PAC-FONT.TTF") format("truetype");
 }
 
+/* defining variables */
 /*
- * CSS for navbar
-  */
+ * Global layout stuff
+ */
+html {
+  box-sizing: border-box;
+  font-family: 'Antic Didone', serif;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* home page nav-bar stuff
+ */
+#BEAGames {
+  font: 6em 'pacman font','Antic Didone', serif;
+}
+
 .navbar-header h1 {
-  font: 6em 'arcade' 'Antic Didone', serif;
-  text-align: center;
+  font: 6em "pacman font", "Antic Didone", serif;
+}
+
+/* game page nav-bar stuff
+ */
+body {
+  margin: 0;
+  color: #244751;
+  background-color: black;
 }
 
 /*
