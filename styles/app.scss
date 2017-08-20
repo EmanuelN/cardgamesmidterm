@@ -53,66 +53,65 @@ html {
   color: black;
   }
 }
+/* home page stuff
+ */
 
 .jumbotron{
   .choose_game{
   font: $fontarcade;
   color: black;
+  text-align: center;
   }
-    border-color: yellowgreen;
-    border-style: solid;
-    border-width: 1em;
-    border-radius: 5em;
-}
+  .game-icon{
+  height: 10em;
+  width: 15em;
+  box-shadow: 10px 10px 10px #ccc;
+  }
 
-/* game page nav-bar stuff
- */
+.game-icon:hover {
+  cursor: pointer;
+  border: 3px solid black;
+  }
+  border-color: yellowgreen;
+  border-style: solid;
+  border-width: 1em;
+  border-radius: 5em;
+  }
 
-.login{
-  float:right;
-  .loginbar{
-    text-align: center;
-    margin: 0;
-    padding: 0.5em;
-    color: black;
-    .btn{
-      font: 1em 'gamefont','Antic Didone', serif;
+  .userlogin{
+    float:right;
+    .loginbar{
+        text-align: center;
+        margin: 0;
+        padding: 0.5em;
+        color: black;
+      .btn{
+        font: 1em 'gamefont','Antic Didone', serif;
+      }
     }
-  }
-}
 
-.logout{
+ .logout{
     text-align: center;
     font: 1.5em 'gamefont','Antic Didone', serif;
     margin: 0;
     padding: 0.5em;
     color: black;
-    #login-state{
-      float:left;
-      padding-right: 2em;
+      #login-state{
+        float:left;
+        padding-right: 2em;
       .btn{
-      font: 1em 'gamefont','Antic Didone', serif;
-      margin-top: 0;
+        font: 1em 'gamefont','Antic Didone', serif;
+        margin-top: 0;
       }
     }
+  }
 }
 
+/* game page nav-bar stuff
+ */
 
-/*
- * CSS for Home Page
-  */
-
-.game-icon{
-  height: 10em;
-  width: 15em;
-  box-shadow: 10px 10px 10px #ccc;
-}
-
-.game-icon:hover {
-  cursor: pointer;
-  border: 3px solid black;
-}
-
+/* game page stuff
+ */
 
 
 .bump-down{
@@ -121,6 +120,7 @@ html {
     padding: 0 20px;
     margin: 20px 0 0;
     box-sizing: border-box;
+    background-color: #eee;
 }
 
 .container-fluid{
@@ -145,17 +145,13 @@ html {
 }
 
 
-.choose_game{
-  text-align: center;
-}
+
 .jumbotron{
   border-radius: 5em;
 
 }
 
-#button{
 
-}
 
 .card-deck{
   align-content: center;
@@ -170,11 +166,6 @@ html {
   border: 3px solid blue;
 }
 
-.logo{
-    height: 10em;
-    width: 15em;
-    position: relative;
-}
 
 .rankings{
   width: 70%;

@@ -15,12 +15,14 @@
    <!--  check user logged in -->
 
 <% if (!userID) { %>
-  <div class="login collapse navbar-collapse span10 offset1 row-fluid" >
+  <div class="userlogin collapse navbar-collapse span10 offset1 row-fluid" >
+  //////////////////////////////////////////////////////////////
     <form class= "loginbar" method="POST" action="/login" name="Form" onsubmit="">
         Email: <input type="email" name="email" length="20" required="">
         Password: <input type="password" name="password" length="20" required="">
         <button type="login" class="btn btn-primary">Login</button>
     </form>
+    ////////////////////////////////////////////////////////////
   </div>
 
 
@@ -29,8 +31,8 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="logout collapse navbar-collapse" id="bs-example-navbar-collapse-1">
        <form method="POST" action="/logout" class="navbar-form navbar-right">
-      <button class="btn btn-default">Logout</button>
-      <div id="login-state"><%= name %> </div>
+      <button class="btn btn-primary">Logout</button>
+      <div id="login-state">Hi <%= name %> </div>
       </form>
     </div><!-- /.navbar-collapse -->
        <% } %>
