@@ -145,6 +145,7 @@ body {
   width: 5.5em;
   margin: 0.5em;
   box-shadow: 10px 10px 10px #ccc;
+  align-content: center;
 }
 
 .goofspeil-main .player-card-deck:hover {
@@ -169,6 +170,10 @@ body {
   border-width: 2px;
   border-radius: 15px;
   background-color: lightgrey;
+}
+
+.goofspeil-main .prize {
+  align-content: center;
 }
 
 #navbarforjumbotron {
