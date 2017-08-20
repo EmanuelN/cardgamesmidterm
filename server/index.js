@@ -82,9 +82,13 @@ app.post('/goofspeil/:gameid/:playerid/:cardid', (req, res)=>{
         knexhelper.comparecards(req.params.gameid, 1, "", function(staging1){
           knexhelper.comparecards(req.params.gameid, 2, staging1, function(staging2){
             if(staging1 > staging2){
-              console.log('player 1 wins')
+              knexhelper.goofwin(req.params.gameid, 1, 2, function(){
+                console.log('player 1 won')
+              })
             } else if (staging2 > staging1){
-              console.log('player 2 wins')
+                 knexhelper.goofwin(req.params.gameid, 2, 1, function(){
+                console.log('player 2 won')
+              })
             } else {
               console.log('nobody wins')
             }

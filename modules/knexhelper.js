@@ -210,5 +210,35 @@ module.exports = {
     .asCallback((err, rows)=>{
       callback(parseInt(rows[0].staging))
     })
+  },
+  goofwin: (gameid, winner, loser, cb)=>{
+    knex(`goofspeilp${winner}hands`)
+    .where({gameid: gameid})
+    .update({staging: null})
+    .asCallback(()=>{
+      knex(`goofspeilp${loser}hands`)
+      .where({gameid: gameid})
+      .update({staging: null})
+      .asCallback(()=>{
+        knex(`goofspeildeck`)
+        .where({gameid: gameid})
+        .select('staging')
+        .asCallback((err, rows)=>{
+          knex(`goofspeilp${winner}hands`)
+          .where({gameid: gameid})
+          .increment('score', parseInt(rows[0].staging, 10))
+          .asCallback(()=>{
+            cb()
+          })
+        })
+        // knex(`goofspeilp${winner}hands`)
+        // .where({gameid: gameid})
+        // .increment('score', 10)
+        // .asCallback(()=>{
+        //           cb()
+        // })
+
+      })
+    })
   }
 };

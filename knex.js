@@ -11,41 +11,17 @@ const knex = require('knex')({
       // ssl      : process.env.DB_SSL
   }
 });
-function getStaging(gameid, table, otherval, cb1, cb2){
-  knex(`goofspeil${table}`).select('staging').whereNotNull('staging').andWhere('gameid', gameid)
-  .asCallback((err, rows)=>{
-    cb1(rows[0].staging, otherval);
-    if (cb2){
-      cb2()
+knex(`goofspeildeck`)
+.select("*")
+.where({gameid : 1})
+.asCallback((err, rows)=>{
+  for (let row in rows[0]){
+    if (rows[0][row] === true){
+      console.log(row)
     }
-  })
-}
-function removeStaging(gameid, playerid, cb){
-  knex(`goofspeilp${playerid}hands`)
-  .where({gameid: gameid})
-  .update({staging: null})
-  .asCallback((err, rows)=>{
-
-    cb()
-  })
-}
-function updateScore(gameid, playerid, pts, cb){
-  knex(`goofspeilp${playerid}hands`)
-  .where({gameid: gameid})
-  // .update({staging: null})
-  .increment('score', parseInt(pts, 10))
-  .asCallback((err, rows)=>{
-
-    cb()
-  })
-}
-
-updateScore(1, 1, 10, function(){
-  removeStaging(1, 1, function(){
-    knex.destroy()
-  })
+  }
+  knex.destroy()
 })
-
 // getStaging(1, 'p1hands', "", function(staging1){
 //   getStaging(1, 'p2hands', staging1, function(staging2){
 //     console.log('player1 has', staging1)

@@ -15,7 +15,7 @@ exports.down = function(knex, Promise) {
     table.boolean('J').defaultTo(true);
     table.dropColumn('12')
     table.boolean('Q').defaultTo(true);
-    table.dropColumn('K')
-    table.boolean('13').defaultTo(true);
+    table.dropColumn('13')
+    table.boolean('K').defaultTo(true);
   })
 };
