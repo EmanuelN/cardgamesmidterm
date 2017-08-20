@@ -50,7 +50,7 @@
 
         <div class= "player_deck row-sm-3">
           <% for(var i=0; i<user.p1.cards.length; i++) {%>
-            <form method="post" action="/goofspeil/<%= user.gameid %>/<%= user.playerid %>/<%= user.p1.cards[i] %>">
+            <form method="post" action="/goofspeil/<%= user.gameid %>/<%= user.playerid %>/<%= user.p1.cards[i] %>">/goofspeil/<%= user.gameid %>/<%= user.playerid %>/<%= user.p1.cards[i] %>
             <input type="image" class="player-card-deck card-deck" src="/images/cards/<%= user.p1.cards[i]+user.p1.suit%>.png">
 
               <% } %>
