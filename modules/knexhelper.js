@@ -104,6 +104,23 @@ module.exports = {
     })
   },
 
+  goofspeilplaycard: (gameid, player, cardid, callback)=>{
+    knex(`goofspeilp${[player]}hands`)
+    .where({gameid: gameid})
+    .update({[cardid]: false})
+    .asCallback((err, rows)=>{
+      if(err){
+        console.error(err);
+      }
+      knex(`goofspeilp${[player]}hands`)
+      .where({gameid: gameid})
+      .update({staging: cardid})
+      .asCallback(function(){
+        callback()
+      })
+    })
+  },
+
   goofspeilobject: (gameid, player, callback) =>{
     let obj = {p1:{},p2:{},prize:{}}
     //intializes an object consisting of objects that contains all the
@@ -117,11 +134,7 @@ module.exports = {
         //card in the users hand
         for (let row in rows[0]){
             if(rows[0][row] === true){
-              if (row == 'A'){
-                array.unshift(row)
-              } else {
               array.push(row);
-              }
             }
         }
         //If the player is player1, then the player1 suit, score, cards and
@@ -153,6 +166,8 @@ module.exports = {
           }
         }
         obj.prize.cards = array;
+        obj.gameid = gameid;
+        obj.playerid = player;
         obj.prize.suit = rows[0].suit;
         cb(cb2, cb3)
       })
@@ -170,11 +185,7 @@ module.exports = {
         //card in the users hand
         for (let row in rows[0]){
           if(rows[0][row] === true){
-            if (row == 'A'){
-              array.unshift(row)
-            } else {
             array.push(row);
-           }
           }
         }
         if(player == 2){

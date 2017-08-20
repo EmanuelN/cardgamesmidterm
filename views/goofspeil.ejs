@@ -34,11 +34,11 @@
       <div class='row play-area'>
 
         <div class = "opponent row-sm-3">
-          <% for(var i=0; i<user.p1.cards.length; i++) {%>
+          <% for(var i=0; i<user.p2.cards.length; i++) {%>
             <img class="opponent-card-deck card-deck" src="/images/cards/back.jpg">
               <% } %>
 
-          <div class="navbar-form navbar-right">Player 1  Score: <%= user.p1.score %></div>
+          <div class="navbar-form navbar-right">Player 2  Score: <%= user.p2.score %></div>
         </div>
         <br>
 
@@ -52,11 +52,15 @@
         <br>
 
         <div class= "player_deck row-sm-3">
-          <% for(var i=0; i<user.p2.cards.length; i++) {%>
-            <img class="player-card-deck card-deck" src="/images/cards/<%= user.p2.cards[i]+user.p1.suit%>.png">
+          <% for(var i=0; i<user.p1.cards.length; i++) {%>
+            <form method="post" action="/goofspeil/<%= user.gameid %>/<%= user.playerid %>/<%= user.p1.cards[i] %>">
+            <input type="image" class="player-card-deck card-deck" src="/images/cards/<%= user.p1.cards[i]+user.p1.suit%>.png">
+
               <% } %>
 
-          <div class="navbar-form navbar-right">Player 2 Score: <%= user.p2.score %></div>
+
+
+          <div class="navbar-form navbar-right">Player 1 Score: <%= user.p1.score %></div>
         </div>
         <br>
       </div>
