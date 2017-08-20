@@ -26,12 +26,12 @@ html {
 
 /* home page nav-bar stuff
  */
-#BEAGames {
-  font: 6em 'pacman font','Antic Didone', serif;
-}
-
 .navbar-header h1 {
   font: 6em "pacman font", "Antic Didone", serif;
+}
+
+.choose_game {
+  font: 10em "arcade", "Antic Didone", serif;
 }
 
 /* game page nav-bar stuff
