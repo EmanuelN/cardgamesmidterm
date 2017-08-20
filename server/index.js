@@ -102,13 +102,13 @@ app.post('/goofspeil/:gameid/:playerid/:cardid', (req, res)=>{
 
 app.get('/:game/matchmaking/', (req,res)=>{
   knexhelper.matchmaking(req.params.game, 2, function(id){
-    res.end(id)
+    res.redirect(`/${req.params.game}/1/2`)
   })
 });
 
 app.post('/:game/newgame/', (req,res)=>{
   knexhelper.creatematch(req.params.game, 1, function(id){
-    res.end(id)
+    res.redirect(`/${req.params.game}/1/1`)
   })
 });
 

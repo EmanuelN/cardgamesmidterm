@@ -79,12 +79,13 @@ module.exports = {
   matchmaking: (game, player2, callback) =>{
     const subquery = knex(game+'s').select('id').where({player2_id: null});
 
-    knex(game).select('*').whereIn('id', subquery)
+    knex(game+'s').select('*').whereIn('id', subquery)
     .asCallback((err, rows) => {
       if (err){
         console.error(err);
       } else {
-        knex('test').where({id: rows[0].id})
+        console.log(rows)
+        knex(`${game+'s'}`).where({id: rows[0].id})
         .update({player2_id: player2})
         .then(callback(rows[0].id.toString()))
       }
