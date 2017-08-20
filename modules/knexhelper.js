@@ -203,5 +203,12 @@ module.exports = {
       })
     }
     deck(p1, p2, callback);
+  },
+  comparecards: (gameid, player, otherval, callback)=>{
+    knex(`goofspeilp${player}hands`).select('staging')
+    .where('gameid', gameid)
+    .asCallback((err, rows)=>{
+      callback(parseInt(rows[0].staging))
+    })
   }
 };

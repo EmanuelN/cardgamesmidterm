@@ -71,10 +71,27 @@ app.get('/goofspeil/:id/:player/', (req, res)=>{
     });
   })
 })
-
+let cardsplayed = 0;
 app.post('/goofspeil/:gameid/:playerid/:cardid', (req, res)=>{
   knexhelper.goofspeilplaycard(req.params.gameid, req.params.playerid, req.params.cardid,
     function(){
+      console.log('player ', req.params.playerid, ' played ', req.params.cardid);
+      cardsplayed ++;
+      if (cardsplayed === 2){
+        cardsplayed = 0;
+        knexhelper.comparecards(req.params.gameid, 1, "", function(staging1){
+          knexhelper.comparecards(req.params.gameid, 2, staging1, function(staging2){
+            if(staging1 > staging2){
+              console.log('player 1 wins')
+            } else if (staging2 > staging1){
+              console.log('player 2 wins')
+            } else {
+              console.log('nobody wins')
+            }
+
+          })
+        })
+      }
       res.redirect(`/goofspeil/${req.params.gameid}/${req.params.playerid}`);
     })
 });
