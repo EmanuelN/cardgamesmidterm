@@ -65,9 +65,9 @@ app.get('/goofspeil/:id/:player/', (req, res)=>{
     if (obj.p2.cards.length === 0){
       console.log(`the player has ${obj.p1.score} points`)
       if (obj.p1.score > obj.p2.score){
-        res.end("YOU WIN!!!")
+        res.render('winner');
       } else {
-        res.end('YOU LOSE!!!')
+        res.render('loser');
       }
 
     } else {
