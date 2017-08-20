@@ -240,7 +240,6 @@ module.exports = {
               }
               var rand = array[Math.floor(Math.random()*array.length)];
               upturnedCard = array.splice(array.indexOf(rand), 1);
-              console.log(upturnedCard[0], " is the deck card");
               knex(`goofspeildeck`)
               .where({gameid: gameid})
               .update({
