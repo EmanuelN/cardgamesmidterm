@@ -12,6 +12,11 @@
   src: url('../fonts/PAC-FONT.TTF') format('truetype');
 }
 
+@font-face{
+  font-family: "gamefont";
+  src: url('../fonts/game_font_7.ttf') format('truetype');
+}
+
 
 /* defining variables */
 
@@ -35,18 +40,29 @@ html {
 /* home page nav-bar stuff
  */
 
+ body {
+  margin: 0;
+  background-color: black;
+  font-family: 'Antic Didone', serif;
+}
 
 
 .navbar-header{
   h1{
   font: $fontpacman;
+  color: black;
   }
 }
 
 .jumbotron{
   .choose_game{
   font: $fontarcade;
+  color: black;
   }
+    border-color: yellowgreen;
+    border-style: solid;
+    border-width: 1em;
+    border-radius: 5em;
 }
 
 /* game page nav-bar stuff
@@ -56,22 +72,12 @@ html {
   float:right;
   .loginbar{
     text-align: center;
-    font: 1.5em 'arcade', 'Antic Didone', serif;
+    font: 1.5em 'gamefont','Antic Didone', serif;
     margin: 0;
-    padding: 1em;
+    padding: 0.5em;
+    color: black;
   }
 }
-
-
- body {
-  margin: 0;
-  color: #244751;
-  background-color: black;
-}
-
-
-
-
 
 
 /*
@@ -99,7 +105,9 @@ html {
     box-sizing: border-box;
 }
 
-
+.container-fluid{
+  background-color: white;
+}
 
 .container{
   width: 90%;
@@ -123,7 +131,7 @@ html {
   text-align: center;
 }
 .jumbotron{
-
+  border-radius: 5em;
 
 }
 
@@ -151,6 +159,7 @@ html {
 }
 
 .rankings{
-  width: 6em;
+  width: 70%;
+  margin: 1em;
 }
 
