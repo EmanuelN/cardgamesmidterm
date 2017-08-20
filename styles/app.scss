@@ -113,6 +113,10 @@ html {
 /* game page stuff
  */
 
+ .goofspeil-main{
+  background-color: white;
+ }
+
 
 .bump-down{
     max-width: 97%;
@@ -127,7 +131,7 @@ html {
   background-color: white;
 }
 
-.container{
+.mainpage{
   width: 90%;
   margin:0 auto;
 }
@@ -148,7 +152,6 @@ html {
 
 .jumbotron{
   border-radius: 5em;
-
 }
 
 

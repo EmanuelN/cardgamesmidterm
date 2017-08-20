@@ -24,15 +24,10 @@
 
 
 </head>
+<body>
+ <% include ./partials/_nav_game %>
 
-<body class="bump-down">
-
-  <div class= "nav-bar">
-  <% include ./partials/_nav_game %>
-  </div>
-
-     <div class='container'>
-      <div class='row play-area'>
+  <div class= "jumbotron goofspeil-main container">
 
         <div class = "opponent row-sm-3">
           <% for(var i=0; i<user.p2.cards.length; i++) {%>
@@ -64,8 +59,10 @@
           <div class="navbar-form navbar-right">Player 1 Score: <%= user.p1.score %></div>
         </div>
         <br>
-      </div>
-    </div>
+
+        </div>
+
+
 
     <!-- Including Bootstrap's Files via CDN -->
     <!-- must be at the end of body -->
