@@ -182,3 +182,7 @@ body {
 #navbarforjumbotron {
   font: 2em 'Antic Didone', serif;
 }
+
+.col-sm-3 {
+  width: 8%;
+}
