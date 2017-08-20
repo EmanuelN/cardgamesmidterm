@@ -60,9 +60,6 @@ body {
   font: 6em "arcade", "Antic Didone", serif;
   color: black;
   text-align: center;
-  box-sizing: border-box;
-  border-style: solid;
-  background-color: white;
 }
 
 .jumbotron .game-icon {
