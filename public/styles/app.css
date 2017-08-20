@@ -62,10 +62,31 @@ body {
 
 .login .loginbar {
   text-align: center;
+  margin: 0;
+  padding: 0.5em;
+  color: black;
+}
+
+.login .loginbar .btn {
+  font: 1em 'gamefont','Antic Didone', serif;
+}
+
+.logout {
+  text-align: center;
   font: 1.5em 'gamefont','Antic Didone', serif;
   margin: 0;
   padding: 0.5em;
   color: black;
+}
+
+.logout #login-state {
+  float: left;
+  padding-right: 2em;
+}
+
+.logout #login-state .btn {
+  font: 1em 'gamefont','Antic Didone', serif;
+  margin-top: 0;
 }
 
 /*
