@@ -228,7 +228,29 @@ module.exports = {
           .where({gameid: gameid})
           .increment('score', parseInt(rows[0].staging, 10))
           .asCallback(()=>{
-            cb()
+            knex(`goofspeildeck`)
+            .select('*')
+            .where({gameid: gameid})
+            .asCallback((err, rows)=>{
+              let array = [];
+              for (let row in rows[0]){
+                if (rows[0][row] === true){
+                  array.push(row)
+                }
+              }
+              var rand = array[Math.floor(Math.random()*array.length)];
+              upturnedCard = array.splice(array.indexOf(rand), 1);
+              console.log(upturnedCard[0], " is the deck card");
+              knex(`goofspeildeck`)
+              .where({gameid: gameid})
+              .update({
+                staging: upturnedCard[0],
+                [upturnedCard[0]]: null
+              })
+              .asCallback(()=>{
+                cb()
+              })
+            })
           })
         })
         // knex(`goofspeilp${winner}hands`)
