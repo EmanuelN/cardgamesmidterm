@@ -42,21 +42,17 @@
 
         <div class= "prize row-lg-2">
           <img class="card-deck" id="card-deck-table" src="/images/cards/back.jpg">
-          <img class="card-deck" id="card-prize-table" src="/images/card_logo.png">
-          <img class="card-deck" id="card-player1-table" src="/images/card_logo.png">
-          <img class="card-deck" id="card-player2-table" src="/images/card_logo.png">
+        <!-- check this code -->
+          <img src="/images/cards/<%= user.prize.staging + user.prize.suit%>.png">
+        <!-- till here -->
         </div>
-        <br>
         <br>
 
         <div class= "player_deck row-sm-3">
           <% for(var i=0; i<user.p1.cards.length; i++) {%>
             <form method="post" action="/goofspeil/<%= user.gameid %>/<%= user.playerid %>/<%= user.p1.cards[i] %>">
             <input type="image" class="player-card-deck card-deck" src="/images/cards/<%= user.p1.cards[i]+user.p1.suit%>.png"></form>
-
           <% } %>
-
-
 
           <div class="score navbar-form navbar-right">Player 1 <br> Score: <%= user.p1.score %></div>
         </div>

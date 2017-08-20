@@ -64,6 +64,9 @@ html {
   font: $fontarcade;
   color: black;
   text-align: center;
+    box-sizing: border-box;
+    border-style: solid;
+    background-color: white;
   }
   .game-icon{
   height: 10em;
@@ -96,7 +99,7 @@ html {
 
  .logout{
     text-align: center;
-    font: 1.5em 'gamefont','Antic Didone', serif;
+    font: 1.5em 'Antic Didone', serif;
     margin: 0;
     padding: 0.5em;
     color: black;
@@ -153,6 +156,7 @@ html {
   width: 5.5em;
   margin: 0.5em;
   box-shadow: 10px 10px 10px #ccc;
+  align-content: center;
   }
 
 .player-card-deck:hover {
@@ -175,10 +179,13 @@ html {
     border-radius: 15px;
     background-color: lightgrey;
   }
+  .prize{
+    align-content: center;
+  }
 }
 
 #navbarforjumbotron{
-  font: 5em 'arcade', 'Antic Didone', serif;
+  font: 2em 'Antic Didone', serif;
   }
 
 
