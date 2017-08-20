@@ -1,19 +1,19 @@
 /*
  * Global layout stuff
  */
+
 html {
   box-sizing: border-box;
   font-family: 'Antic Didone', serif;
 }
-
 *, *:before, *:after {
-  box-sizing: inherit;
-}
+  box-sizing: inherit;}
 
 /*
  * Global layout stuff
  */
-body {
+
+ body {
   margin: 0;
   color: #244751;
   /* background-color: black; */
@@ -22,28 +22,34 @@ body {
 /*
  * using custom fonts
  */
-@font-face {
+
+@font-face{
   font-family: "arcade";
-  src: url("../fonts/ARCADE.TTF") format("truetype");
+  src: url('../fonts/ARCADE.TTF') format('truetype');
 }
 
-@font-face {
+@font-face{
   font-family: "pacman font";
-  src: url("../fonts/PAC-FONT.TTF") format("truetype");
+  src: url('../fonts/PAC-FONT.TTF') format('truetype');
 }
 
 /*
  * CSS for navbar
   */
-.navbar-header h1 {
-  font: 6em 'arcade' 'Antic Didone', serif;
-  text-align: center;
+
+.navbar-header{
+  h1{
+    font: 6em 'arcade' 'Antic Didone', serif;
+    text-align: center;
+  }
 }
+
 
 /*
  * CSS for Home Page
   */
-.game-icon {
+
+.game-icon{
   height: 10em;
   width: 15em;
   box-shadow: 10px 10px 10px #ccc;
@@ -54,36 +60,49 @@ body {
   border: 3px solid black;
 }
 
-.bump-down {
-  max-width: 97%;
-  width: 100%;
-  padding: 0 20px;
-  margin: 20px 0 0;
-  box-sizing: border-box;
+
+
+.bump-down{
+    max-width: 97%;
+    width: 100%;
+    padding: 0 20px;
+    margin: 20px 0 0;
+    box-sizing: border-box;
 }
 
-.container {
+
+
+.container{
   width: 90%;
-  margin: 0 auto;
+  margin:0 auto;
 }
 
 .prize {
   box-shadow: 10px 10px 10px #ccc;
 }
 
-.opponent {
+.opponent{
   box-shadow: 10px 10px 10px #ccc;
 }
 
-.player_deck {
+.player_deck{
   box-shadow: 10px 10px 10px #ccc;
 }
 
-.choose_game {
+
+.choose_game{
   text-align: center;
 }
+.jumbotron{
 
-.card-deck {
+
+}
+
+#button{
+
+}
+
+.card-deck{
   align-content: center;
   height: 5.5em;
   width: 5.5em;
@@ -96,12 +115,13 @@ body {
   border: 3px solid blue;
 }
 
-.logo {
-  height: 10em;
-  width: 15em;
-  position: relative;
+.logo{
+    height: 10em;
+    width: 15em;
+    position: relative;
 }
 
-.rankings {
+.rankings{
   width: 6em;
 }
+

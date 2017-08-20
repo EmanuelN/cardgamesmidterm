@@ -9,6 +9,13 @@ app.use(cookieParser({
   keys: ['gdionasgionads', 'gnuiadngiudndn'],
 }));
 
+const sass  = require("node-sass-middleware");
+app.use("/styles", sass({
+  src: __dirname + '/../styles',
+  dest: __dirname + '/../public/styles',
+  debug: true,
+  outputStyle: 'expanded'
+}));
 
 const path = require('path');
 app.use(express.static(path.join(__dirname, '../public')));
