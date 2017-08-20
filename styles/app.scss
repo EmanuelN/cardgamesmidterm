@@ -55,7 +55,10 @@ html {
 }
 /* home page stuff
  */
-
+.mainpage{
+  width: 90%;
+  margin:0 auto;
+}
 .jumbotron{
   .choose_game{
   font: $fontarcade;
@@ -89,6 +92,7 @@ html {
         font: 1em 'gamefont','Antic Didone', serif;
       }
     }
+  }
 
  .logout{
     text-align: center;
@@ -105,10 +109,7 @@ html {
       }
     }
   }
-}
 
-/* game page nav-bar stuff
- */
 
 /* game page stuff
  */
@@ -131,47 +132,37 @@ html {
   background-color: white;
 }
 
-.mainpage{
-  width: 90%;
-  margin:0 auto;
-}
-
-.prize {
-  box-shadow: 10px 10px 10px #ccc;
-}
-
-.opponent{
-  box-shadow: 10px 10px 10px #ccc;
-}
-
-.player_deck{
-  box-shadow: 10px 10px 10px #ccc;
-}
-
-
 
 .jumbotron{
   border-radius: 5em;
 }
-
-
-
-.card-deck{
-  align-content: center;
-  height: 5.5em;
-  width: 5.5em;
-  margin: 0.5em;
-  box-shadow: 10px 10px 10px #ccc;
-}
-
-.player-card-deck:hover {
-  cursor: pointer;
-  border: 3px solid blue;
-}
-
 
 .rankings{
   width: 70%;
   margin: 1em;
 }
 
+.goofspeil-main{
+  .prize{
+  background-color: #eee;
+  box-shadow: 10px 10px 10px #ccc;
+  }
+  .card-deck{
+  align-content: center;
+  height: 5.5em;
+  width: 5.5em;
+  margin: 0.5em;
+  box-shadow: 10px 10px 10px #ccc;
+  }
+
+.player-card-deck:hover {
+  cursor: pointer;
+  border: 3px solid blue;
+  }
+  .opponent{
+  box-shadow: 10px 10px 10px #ccc;
+  }
+  .player_deck{
+  box-shadow: 10px 10px 10px #ccc;
+  }
+}

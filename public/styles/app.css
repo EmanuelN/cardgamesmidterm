@@ -44,6 +44,11 @@ body {
 
 /* home page stuff
  */
+.mainpage {
+  width: 90%;
+  margin: 0 auto;
+}
+
 .jumbotron {
   border-color: yellowgreen;
   border-style: solid;
@@ -83,7 +88,7 @@ body {
   font: 1em 'gamefont','Antic Didone', serif;
 }
 
-.userlogin .logout {
+.logout {
   text-align: center;
   font: 1.5em 'gamefont','Antic Didone', serif;
   margin: 0;
@@ -91,18 +96,16 @@ body {
   color: black;
 }
 
-.userlogin .logout #login-state {
+.logout #login-state {
   float: left;
   padding-right: 2em;
 }
 
-.userlogin .logout #login-state .btn {
+.logout #login-state .btn {
   font: 1em 'gamefont','Antic Didone', serif;
   margin-top: 0;
 }
 
-/* game page nav-bar stuff
- */
 /* game page stuff
  */
 .goofspeil-main {
@@ -122,28 +125,21 @@ body {
   background-color: white;
 }
 
-.mainpage {
-  width: 90%;
-  margin: 0 auto;
-}
-
-.prize {
-  box-shadow: 10px 10px 10px #ccc;
-}
-
-.opponent {
-  box-shadow: 10px 10px 10px #ccc;
-}
-
-.player_deck {
-  box-shadow: 10px 10px 10px #ccc;
-}
-
 .jumbotron {
   border-radius: 5em;
 }
 
-.card-deck {
+.rankings {
+  width: 70%;
+  margin: 1em;
+}
+
+.goofspeil-main .prize {
+  background-color: #eee;
+  box-shadow: 10px 10px 10px #ccc;
+}
+
+.goofspeil-main .card-deck {
   align-content: center;
   height: 5.5em;
   width: 5.5em;
@@ -151,12 +147,15 @@ body {
   box-shadow: 10px 10px 10px #ccc;
 }
 
-.player-card-deck:hover {
+.goofspeil-main .player-card-deck:hover {
   cursor: pointer;
   border: 3px solid blue;
 }
 
-.rankings {
-  width: 70%;
-  margin: 1em;
+.goofspeil-main .opponent {
+  box-shadow: 10px 10px 10px #ccc;
+}
+
+.goofspeil-main .player_deck {
+  box-shadow: 10px 10px 10px #ccc;
 }
