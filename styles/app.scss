@@ -164,5 +164,21 @@ html {
   }
   .player_deck{
   box-shadow: 10px 10px 10px #ccc;
+  background-color: green;
+  }
+  .score{
+  font: 2em 'arcade', 'Antic Didone', serif;
+  box-sizing: 1em;
+  border-color: yellowgreen;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 15px;
+    background-color: lightgrey;
   }
 }
+
+#navbarforjumbotron{
+  font: 5em 'arcade', 'Antic Didone', serif;
+  }
+
+
