@@ -16,9 +16,8 @@
 
 <% if (!userID) { %>
 
-    <div class="collapse navbar-collapse" >
-      <h5 id="login">Please log in</h2>
-        <form method="POST" action="/login">
+    <div class="login collapse navbar-collapse" >
+        <form class= "loginbar" method="POST" action="/login">
             Email: <input type="email" name="email">
             Password: <input type="password" name="password">
             <button type="login" class="btn btn-login btn-lg">Login</button>

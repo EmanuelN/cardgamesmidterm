@@ -15,8 +15,8 @@
 
 /* defining variables */
 
-$fontarcade: 10em 'arcade', 'Antic Didone', serif;
-$fontpacman: 6em 'pacman font','Antic Didone', serif;
+$fontarcade: 6em 'arcade', 'Antic Didone', serif;
+$fontpacman: 4em 'pacman font','Antic Didone', serif;
 $primarycolor: #333;
 
 
@@ -43,14 +43,24 @@ html {
   }
 }
 
-.choose_game{
+.jumbotron{
+  .choose_game{
   font: $fontarcade;
+  }
 }
 
 /* game page nav-bar stuff
  */
 
-
+.login{
+  float:right;
+  .loginbar{
+    text-align: center;
+    font: 1.5em 'arcade', 'Antic Didone', serif;
+    margin: 0;
+    padding: 1em;
+  }
+}
 
 
  body {
