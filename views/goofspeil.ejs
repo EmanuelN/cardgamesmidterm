@@ -30,7 +30,7 @@
 
   <div class= "jumbotron goofspeil-main container">
 
-        <div class = "opponent row-sm-3">
+        <div class = "opponent row-sm-3 nopadding">
           <% for(var i=0; i<user.p2.cards.length; i++) {%>
             <img class="opponent-card-deck card-deck" src="/images/cards/back.jpg">
               <% } %>
@@ -48,7 +48,7 @@
         </div>
         <br>
 
-        <div class= row-lg-12">
+        <div class= row-sm-3">
             <% for(var i=0; i<user.p1.cards.length; i++) {%>
           <form class="form-inline col-sm-3" method="post" action="/goofspeil/<%= user.gameid %>/<%= user.playerid %>/<%= user.p1.cards[i] %>">
             <input type="image" class="player-card-deck card-deck" src="/images/cards/<%= user.p1.cards[i]+user.p1.suit%>.png"></form>
