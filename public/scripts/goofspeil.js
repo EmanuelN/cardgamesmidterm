@@ -2,7 +2,7 @@ $(document).ready(function(){
   $(".player-card-deck").on('click', function(){
     var status = $(this).val();
     $.ajax({
-      type: get,
+      type: "GET",
       url: `/goofspeil/${user.gameid}/${user.playerid}`,
     });
   })
