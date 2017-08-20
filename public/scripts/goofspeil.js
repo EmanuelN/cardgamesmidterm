@@ -1,3 +1,14 @@
+$(document).ready(function(){
+  $(".player-card-deck").on('click', function(){
+    var status = $(this).val();
+    $.ajax({
+      type: get,
+      url: `/goofspeil/${user.gameid}/${user.playerid}`,
+    });
+  })
+})
+
+
 $(document).ready(function() {
   var app = {
     cards: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
