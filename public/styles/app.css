@@ -167,7 +167,10 @@ body {
 
 .goofspeil-main .prize {
   background-color: #eee;
-  box-shadow: 10px 10px 10px #ccc;
+  box-shadow: 10px 10px 10px #eee;
+  padding: 2em;
+  background-color: green;
+  align-content: center;
 }
 
 .goofspeil-main .card-deck {
@@ -202,6 +205,7 @@ body {
   border-width: 2px;
   border-radius: 15px;
   background-color: lightgrey;
+  position: relative;
 }
 
 .goofspeil-main .prize {
