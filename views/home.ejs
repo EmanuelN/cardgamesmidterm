@@ -39,22 +39,28 @@
 
       <h1 class="choose_game">Choose Game</h1>
         <div class="container">
-          <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-              <p>Players Online:</p>
+              <p>Players Online: 1</p>
               <a href="http://localhost:8080/goofspeil/1/1"><img class="game-icon" src="/images/Goofspeil.png"></a>
+              <a href="http://localhost:8080/goofspeil/1/1"><button type="button" class="bottomaligned btn btn-primary" style="position:relative; margin-top: 1em;">Start Game</button></a>
+              <button type="button" class="bottomaligned btn btn-dark" style="position:relative; margin-top: 1em;">Matchmaking</button>
+
               <% include ./partials/_goofspeilranking %>
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-              <p>Players Online:</p>
+              <p>Players Online: 0</p>
               <img class="game-icon" src="/images/blackjack-icon.png">
+              <button type="button" class="btn bottomaligned btn btn-primary" style="position:relative; margin-top: 1em;">Start Game</button>
+              <button type="button" class="bottomaligned btn btn-dark" style="position:relative; margin-top: 1em;">Matchmaking</button>
               <% include ./partials/_blackjackranking %>
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-              <p>Players Online:</p>
+              <p>Players Online: 0</p>
               <img class="game-icon" src="/images/texashold.jpg">
+              <button type="button" class="bottomaligned btn btn-primary" style="position:relative; margin-top: 1em;">Start Game</button>
+              <button type="button" class="bottomaligned btn btn-dark" style="position:relative; margin-top: 1em;">Matchmaking</button>
               <table class = "rankings">
               <th>Texas Hold 'em rankings:</th>
               <table class="rankings table table-hover">
