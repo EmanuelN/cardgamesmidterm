@@ -125,12 +125,16 @@ body {
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-  background: #33a6cc;
+  background: yellowgreen;
 }
 
 .btn-primary:active, .btn-primary.active {
-  background: #007299;
+  background: yellowgreen;
   box-shadow: none;
+}
+
+.btn-dark:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+  background: yellowgreen;
 }
 
 /* game page stuff
