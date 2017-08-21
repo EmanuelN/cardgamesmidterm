@@ -170,6 +170,7 @@ module.exports = {
         obj.gameid = gameid;
         obj.playerid = player;
         obj.prize.suit = rows[0].suit;
+        obj.prize.stage= rows[0].staging;
         cb(cb2, cb3)
       })
     }
