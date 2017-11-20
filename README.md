@@ -1,7 +1,7 @@
 # Card Games Midterm project
 
 ##Screenshots
-![Home Page]()
+![Home Page](https://github.com/EmanuelN/cardgamesmidterm/blob/master/Docs/home.png?raw=true)
 
 ## Setup
 1. Enter command "npm i"
