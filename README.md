@@ -11,4 +11,5 @@
 5. npm start
 6. Open http://localhost:8080/ on your web browser
 
-#### Made by Emanuel, Bhav and Avi
+#### Contributers -
+Emanuel, [Bhavdip](https://github.com/bhavc) & [Avleen] (https://github.com/avleen30)
