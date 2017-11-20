@@ -1,6 +1,6 @@
 # Card Games Midterm project
 
-##Screenshots
+## Screenshot
 ![Home Page](https://github.com/EmanuelN/cardgamesmidterm/blob/master/Docs/home.png?raw=true)
 
 ## Setup
