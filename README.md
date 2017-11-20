@@ -12,4 +12,4 @@
 6. Open http://localhost:8080/ on your web browser
 
 #### Contributers -
-Emanuel, [Bhavdip](https://github.com/bhavc) & [Avleen] (https://github.com/avleen30)
+Emanuel, [Bhavdip](https://github.com/bhavc) & [Avleen](https://github.com/avleen30)
