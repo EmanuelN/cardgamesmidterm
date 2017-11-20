@@ -1,5 +1,5 @@
 //figure out how to score ace
-//ace = 11, is you're over then subtract 10 from the total 
+//ace = 11, is you're over then subtract 10 from the total
 
 gameState = {
   house : {
